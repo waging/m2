@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="javascript:history.back()"></a></div>
+编辑短信模版
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+
+<style>
+.my_remarks div.remark_boxes{ height:2.84em; line-height:2.84em; display:-webkit-box; padding-left:0;}
+.my_remarks div em{ height:2.84em; font-style:normal;}
+.my_remarks div input{ width:100%;}
+.my_remarks div.remark_boxes div{ box-flex:1;-webkit-box-flex:1; padding-left:0; border:none;}
+</style>
+ 
+  <div class="content_box" style="padding-left:0;">
+  
+  <div class="reg_tip"></div>
+  
+   <div class="message_form">
+   
+     <div class="form_box">
+        <label>模版标题：</label><div><input name="" type="text" value="生日模板" class="title"></div><span>*</span>
+     </div>
+     
+     <div class="form_box">
+        <label>短信内容：</label>
+        <div style="height:10em">
+        <textarea class="content" >感谢您光临本店,希望我的服务让你满意！
+深圳市粤迪汽车贸易有限公司
+销售顾问：刘一东
+手机：13954889564
+</textarea>
+        </div>
+        <span>*</span>
+     </div>
+     
+     <div class="form_box my_remarks">
+        <label>短信签名：</label>
+        <div class="remark_boxes">
+          <em>【</em>
+          <div><input type="text" /></div>
+          <em>】</em>
+        </div>
+        <span>*</span>
+     </div>
+     
+    
+    <div class="message_intro">
+        
+       <strong>1.短信内容举例</strong>：<br/>感谢您光临本店,希望我的服务让你满意！
+       <br>
+       深圳市粤迪汽车贸易有限公司<br/>
+销售顾问：刘一东<br/>
+手机：13954889564
+      <div class="qianming">
+         <strong>2.短信签名举例</strong>：<br/>
+         【挖金科技】
+      </div>
+    </div>
+    
+   </div>
+   
+     
+     
+   </div>
+
+  </div> 
+
+</form>
+
+<script type="text/javascript">
+
+
+var form=$("form");
+var title=$(".title");
+var content=$(".content");
+
+
+
+title.blur(checkTitle);
+content.blur(checkContent);
+
+
+
+function checkTitle(){
+	var txt=title.val();
+	if(txt==""){$(".reg_tip").text("模版标题不能为空!");return false;}
+	else{
+		$(".reg_tip").text("");
+	     return true;
+    }
+};
+
+function checkContent(){
+	var txt=content.val();
+	if(txt==""){$(".reg_tip").text("短信内容不能为空!");return false;}
+	else{
+		$(".reg_tip").text("");
+	     return true;
+    }
+};
+
+
+
+form.submit(function(){ //ajax保存注册信息
+	if(checkTitle() && checkContent()){
+		
+		
+		//这里保存信息代码
+		alert("保存成功!")
+		window.location.href="message_info.html";//
+		return false;
+	}else{
+		return false;
+	}
+});
+
+</script>
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="../group/index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div class="hover"><a href="index.html"><span></span>挖金</a></div> 
+</div
+
+></body>
+</html>

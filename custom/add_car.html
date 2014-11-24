@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/mobiscroll.js" type="text/javascript"></script>
+<link href="../style/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+<style>
+.lodings{z-index:10; position:fixed; left:50%; top:50%;width:150px;height:100px;} 
+.lodings_img{ background:rgba(40,40,40,0.8); background-image:url(../images/loadings.gif); background-repeat:no-repeat; background-position:center center; background-size:40px auto;  width:120px;  margin-top:-30px; margin-left:-60px; height:60px; border-radius:8px;-webkit-border-radius:8px;}
+</style>
+</head>
+
+<body>
+
+<!--<div class="lodings">
+   <div class="lodings_img"></div>
+</div>-->
+
+<form>
+<header>
+<div class="back"><a href="index.html"></a></div>
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+ 
+   <div class="common_tab"> 
+        <div><a href="add_car.html"  class="current">车辆</a></div>
+        <div><a href="add_custom.html">资料</a></div> 
+        <div><a href="business_list.html">营业</a></div>
+        <div><a href="order_list.html">订单</a></div>
+   </div><!--tab end-->
+   
+  <div class="content_box">
+    
+    <div class="add_form"><!---表单开始-->
+       
+       
+       <div class="form_box">
+          <label>车牌：</label>
+          <div class="select_bg">
+             <select id="HPNO" name="HPNO">								
+                    <option value="冀">冀</option>
+                    <option value="津">津</option>
+                    <option value="晋">晋</option>
+                    <option value="京">京</option>
+                    <option value="蒙">蒙</option>
+                    <option value="辽">辽</option>
+                    <option value="吉">吉</option>
+                    <option value="黑">黑</option>
+                    <option value="沪">沪</option>
+                    <option value="苏">苏</option>
+                    <option value="浙">浙</option>
+                    <option value="皖">皖</option>
+                    <option value="闽">闽</option>
+                    <option value="鲁">鲁</option>
+                    <option value="豫">豫</option>
+                    <option value="鄂">鄂</option>
+                    <option value="湘">湘</option>
+                    <option value="粤" selected>粤</option>
+                    <option value="赣" >赣</option>
+                    <option value="桂">桂</option>
+                    <option value="琼">琼</option>
+                    <option value="渝">渝</option>
+                    <option value="川">川</option>
+                    <option value="贵">贵</option>
+                    <option value="云">云</option>
+                    <option value="藏">藏</option>
+                    <option value="陕">陕</option>
+                    <option value="甘">甘</option>
+                    <option value="青">青</option>
+                    <option value="宁">宁</option>
+                    <option value="新">新</option>
+                </select>
+          </div>
+         <div><input type="text"  placeholder="车牌号码"/></div>
+         <span>*</span>
+       </div>
+       
+       <div class="form_box">
+          <label>品牌：</label>
+          <div class="select_bg area"> 
+             <select name="">
+               <option>请选择车型</option>
+               <option>宝马</option>
+               <option>比亚迪</option>
+               <option>大众</option>   
+            </select>
+          </div>
+          <span>*</span>
+      </div>
+      
+        <div class="form_box">
+           <label>车型：</label>
+           <div class="select_bg area"> 
+             <select name="">
+               <option>请选择车型</option>
+               <option>SUV</option>
+               <option>中型</option>
+               <option>小型</option>
+            </select>
+            </div>
+            <span>*</span>
+        </div>
+        
+        <div class="form_box">
+           <label>型号：</label>
+           <div class="select_bg area"> 
+             <select name="">
+               <option>请选择型号</option>
+               <option>H6</option>
+               <option>H5</option>
+               <option>H4</option>
+            </select>
+            </div>
+            <span>*</span>
+        </div>
+        
+        <div class="form_box">
+           <label>颜色：</label>
+           <div class="select_bg area"> 
+             <select name="">
+               <option>请选择颜色</option>
+               <option>黑色</option>
+               <option>白色</option>
+               <option>银色</option>
+               <option>红色</option>
+            </select>
+            </div>
+            <span>*</span>
+        </div>
+        
+        <div class="form_box">
+          <label>车架号：</label>
+         <div><input type="tel"  placeholder="后6位"/></div>
+         <span>*</span>
+       </div>
+        
+       <div class="form_box">
+          <label>发动机号：</label>
+         <div><input type="tel"  placeholder="后6位"/></div>
+         <span>*</span>
+       </div>
+       
+       <div class="form_box">
+          <label>上牌时间：</label>
+         <div><input type="text"  id="card"/></div>
+         
+       </div>
+       
+       
+     
+        
+      
+
+    </div><!---表单结束-->
+ 
+  </div>
+  
+ </div> 
+  
+</div><!--主体内容结束-->
+</form>
+<script type="text/javascript">
+var form=$("form");
+form.submit(function(){//保存信息
+			//window.location.href="car_info.html";
+			return false;	
+});
+
+$(function(){
+	$('#card').val('1988-03-15')
+	.scroller('destroy')
+	.scroller($.extend({preset :'date'},{  //日期
+		 theme:"ios",    //皮肤样式
+		 mode:"scroller",    //日期选择模式
+		 display: "bubble",  //显示方式 
+		 lang:"zh",          //语言
+		 dateFormat: 'yy-mm-dd',  //日期格式
+		 dateOrder: 'yymmdd',      //排列顺序
+		 endYear:2014,   //结束年
+		 startYear:1940  //起始年
+		 
+  })); //日期结束
+})
+</script>
+
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+
+</body>
+</html>

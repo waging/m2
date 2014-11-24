@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery.js"></script>
+<link href="../style/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="index.html"></a></div>
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+
+  <div class="common_tab"> 
+      <div><a href="add_custom.html">资料</a></div>
+      <div><a href="add_car.html">车辆</a></div>
+      <div><a href="business_list.html">营业</a></div>
+      <div><a href="supply.html"  class="current">补充</a></div>
+ </div><!--tab end-->
+ 
+<style>
+.box_title{ font-size:14px; font-weight:bold; color:#2875ab; margin-bottom:5px;}
+.add_form_bg{ padding:10px; margin-bottom:15px; background:#f1f1f1; border-radius:6px;}
+</style>
+
+<div class="content_box" style="padding-top:5px;">    
+    <div class="tip"></div>
+    
+
+    <div class="add_form"><!---表单开始-->
+    
+     <div class="box_title">资料补充</div>  
+     <div class="add_form_bg">
+     
+          <div class="form_box">
+            <label>地址：</label>
+             <div class="select_bg">
+             <select name="prov"></select>
+            </div>
+            <div class="select_bg  margin_none"> 
+             <select name="city"></select>
+            </div>
+        </div>
+        
+        <div class="form_box">
+          <label></label>  
+          <div class="select_bg area"> 
+           <select name="area"></select>
+          </div>
+        </div>
+        
+        <div class="form_box">
+           <label>出生日期：</label> 
+           <div><input type="text" name="birthday" id="birthday"  readonly/></div>
+        </div>
+        
+      </div>
+      
+      
+      
+     <div class="box_title">车辆补充</div>  
+     <div class="add_form_bg">
+     
+        <div class="form_box">
+          <label>车架号：</label>
+         <div><input type="tel"  placeholder="车架号后6位"/></div>
+       </div>
+        
+       <div class="form_box">
+          <label>发动机号：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+       <div class="form_box">
+          <label>车牌：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+        
+      </div>
+      
+     <div class="box_title">财务补充</div>  
+     <div class="add_form_bg">
+     
+        <div class="form_box">
+          <label>成交价：</label>
+         <div><input type="tel" /></div>
+       </div>
+        
+       <div class="form_box">
+          <label>发票号：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+      </div>
+      
+      
+     <div class="box_title">提醒补充</div>  
+     <div class="add_form_bg">
+     
+        <div class="form_box">
+          <label>驾照到期：</label>
+         <div><input type="text" /></div>
+       </div>
+        
+       <div class="form_box">
+          <label>车辆年检：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+       <div class="form_box">
+          <label>黄绿标：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+       <div class="form_box">
+          <label>自定义：</label>
+         <div><input type="text" /></div>
+       </div>
+       
+      </div>
+      
+    </div><!---表单结束-->
+
+
+</div>
+ 
+  
+</div><!--主体内容结束-->
+</form>
+<script type="text/javascript">
+
+$(function(){
+	
+new PCAS("prov","city","area");
+
+  $('#birthday').val('1988-03-15')
+	.scroller('destroy')
+	.scroller($.extend({preset :'date'},{  //日期
+		 theme:"ios",    //皮肤样式
+		 mode:"scroller",    //日期选择模式
+		 display: "bubble",  //显示方式 
+		 lang:"zh",          //语言
+		 dateFormat: 'yy-mm-dd',  //日期格式
+		 dateOrder: 'yymmdd',      //排列顺序
+		 endYear:2014,   //结束年
+		 startYear:1940  //起始年
+		 
+  })); //日期结束
+  
+	
+})
+</script>
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+</body>
+</html>

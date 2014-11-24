@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.9.1.min.js"></script>
+<style>
+.account_box{ border:1px solid #ddd; margin:15px; border-radius:6px;-webkit-border:6px;}
+.account_lists{display:block; display:-webkit-box; height:45px; line-height:45px;border-bottom:1px solid #ddd;}
+.account_lists div{-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;-ms-box-flex:1; }
+.account_lists .account_name{ width:25%;padding-left:10px; font-size:14px; color:#333;}
+.account_lists .change_account{width:50%;text-align:center;}
+.account_lists .change_account a{ display:block; }
+.account_lists .delete_account{width:25%; text-align:right; padding-right:15px;}
+
+.add_account{height:45px; line-height:45px;}
+.add_account a{ color:#006dd2; padding-left:10px; font-size:14px;}
+.change_account a.current{ background:url(../images/current_account.png) no-repeat center center; background-size:18px auto;}
+
+.delete_account a{height:25px; border:1px solid #ce4936; text-align:center; line-height:25px; border-radius:4px; background: -webkit-linear-gradient( top,#f56d5a,#e25e4b);background:-moz-linear-gradient( top,#f56d5a,#e25e4b);background:-o-linear-gradient( top,#f56d5a,#e25e4b); width:50px; display:inline-block; color:#fff;  letter-spacing:2px;}
+.add_account a{ display:block;}
+
+.add_account_box{ margin:15px; margin-top:25px; position:relative;}
+.add_account_box h1{ font-size:14px;  margin-bottom:5px; }
+.account_input{display:block; display:-webkit-box; display:-moz-box;border:1px solid #ddd; border-radius:6px;-webkit-border-radius:6px; height:46px; line-height:46px; margin-bottom:10px;}
+.account_input div{-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;-ms-box-flex:1; overflow:hidden;}
+.account_input label{ width:50px; display:block; text-align:center;}
+.account_input div input{ width:100%;height:46px;-webkit-appearance:none; border:none; background:none;}
+.add_account_box .add_btn{ margin-top:-10px;}
+.accout_tip{color:red; position:absolute; top:0px; width:100%; text-align:center;}
+.accout_item{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+.accout_item a{-webkit-tap-highlight-color:rgba(0,0,0,0.2)}
+
+.change_account_bg{ background:rgba(0,0,0,0.3); position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;}
+.change_box{margin:0 auto; top:28%;  z-index:20; position:fixed; width:80%; left:10%;border-radius: 6px;-webkit-border-radius: 6px;-moz-border-radius: 4px; background:#fff; }
+.change_box h1{ font-size:14px;  margin-left:10px; margin-top:10px;}
+.change_form{ margin:10px;}
+.account_disabled{border:1px solid #eee; color:#999;}
+.pop_btn{display:-webkit-box; display:-moz-box; height:50px; line-height:50px; color:#3a71b1; font-weight:bold; text-align:center; border-top:1px solid #dfdfdf; margin-top:15px;}
+.pop_btn div{-webkit-box-flex:1; width:50%;}
+.pop_btn div:first-child{border-right:1px solid #dfdfdf;}
+.pop_btn div a{ display:block; color:#006dd2;}
+.change_box .account_input{height:40px; line-height:40px;}
+.change_box .account_input div input{height:40px;}
+</style>
+</head>
+
+<body>
+
+<div class="change_account_bg" style="display:none;"><!--修改密码弹出层-->
+   
+   <div class="change_box">
+      <h1>您的密码已经修改，请重新输入!</h1>
+      <div class="change_form">
+      
+         <div class="account_input account_disabled">
+           <label>账号</label>
+           <div><input name="" type="text"   class="user"  value="maoyibing" disabled/></div>
+         </div>
+         
+         <div class="account_input">
+            <label>密码</label>
+            <div><input name="" type="password"  placeholder="请重新输入密码" class="pwd" /></div>
+         </div>
+      </div>
+      
+      <div class="pop_btn">
+           <div><a href="javascript:void(0)" class="cancle">取消</a></div>
+           <div><a href="javascript:void(0)">确定</a></div>
+      </div>
+      
+   </div>
+   
+</div><!--修改密码弹出层-->
+
+
+<header>
+<div class="back"><a href="javascript:history.back()"></a></div>
+切换帐号
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+
+    <div class="account_box"><!--用户列表开始-->
+    
+    <div class="accout_item">
+         <div class="account_lists">
+             <div class="account_name">毛一兵</div>
+             <div class="change_account"><a href="javascript:void(0)">设为当前</a></div>
+             <div class="delete_account"><a href="javascript:void(0)">删除</a></div>
+         </div>
+         
+         <div class="account_lists">
+             <div class="account_name">刘一牛</div>
+             <div class="change_account"><a href="javascript:void(0)" class="current">&nbsp;</a></div>
+             <div class="delete_account"></div>
+         </div>
+         
+         
+          <div class="account_lists">
+             <div class="account_name">刘二东</div>
+             <div class="change_account"><a href="javascript:void(0)">设为当前</a></div>
+             <div class="delete_account"><a href="javascript:void(0)">删除</a></div>
+         </div>
+       
+      </div> 
+       
+       <div class="add_account"><a href="javascript:void(0)">添加帐号</a></div>
+       
+    </div><!--用户列表结束-->
+
+  
+    
+   <div class="add_account_box hide"><!--登录框开始-->
+   
+         <h1>添加帐号</h1>
+         <div class="accout_tip">帐号或密码错误！</div>
+         <div class="clear"></div>
+         
+         <div class="account_input">
+           <label>账号</label>
+           <div><input name="" type="text"  placeholder="请输入帐号" class="user" /></div>
+         </div>
+         
+         <div class="account_input">
+            <label>密码</label>
+            <div><input name="" type="password"  placeholder="请输入密码" class="pwd" /></div>
+         </div>
+   
+    
+        <div class="add_btn"><input name="" type="submit" value="完成" class="common_btn"/></div>
+     
+   </div><!--登录框结束-->
+    
+
+<script type="text/javascript">
+
+$(function(){
+
+   $(".accout_item").click(function(e){
+	   var target=e.target;
+	   if(target.nodeName=="A" && $(target).parent().hasClass("delete_account")){
+		  var result=confirm("确定要删除此帐号吗？");
+	   }   
+   });
+   
+   
+   $(".add_account a").click(function(){
+	   $(".add_account_box").toggleClass("hide");
+	   $(".account_input .user").focus();
+   });
+   
+   
+   $(".add_btn input").click(function(){
+	   var str="<div class='account_lists'><div class='account_name'>刘三东</div><div class='change_account'><a href='javascript:void(0)'>设为当前</a></div><div class='delete_account'><a href='javascript:void(0)'>删除</a></div></div>";
+	   $(".accout_item").append(str);
+	   $(".add_account_box").addClass("hide");
+   });
+   
+   
+});
+</script>
+
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div class="hover"><a href="index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

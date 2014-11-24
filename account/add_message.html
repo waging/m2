@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="message.html"></a></div>
+深圳市粤迪汽车贸易有限公司
+<div class="oper_btn"><input name="" type="submit" value="保存"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+  <div class="content_box">
+  
+  <div class="reg_tip"></div>
+  
+   <div class="message_form">
+   
+     <div class="form_box">
+        <label>模版标题：</label><div><input name="" type="text" class="title"></div><span>*</span>
+     </div>
+     
+     <div class="form_box">
+        <label>短信内容：</label><div style="height:12em"><textarea class="content" placeholder="请记得输入个人重要信息！"></textarea></div><span>*</span>
+     </div>
+     <div class="form_box" style="margin-top:5px; margin-bottom:0.75em; height:1.25em;">
+        <label></label>
+        <div style="border:none; background:none;">亲，要记得输入你的姓名、电话、公司名等重要信息。
+        还能输入 <strong class="red sub_txt">140</strong> 个字。
+        </div>
+        <span></span>
+   </div>
+     
+     
+   </div>
+
+  </div>
+  
+  
+</div><!--主体内容结束-->
+</form>
+
+<script type="text/javascript">
+var form=$("form");
+var title=$(".title");
+var content=$(".content");
+var myname=$(".name");
+var mobile=$(".mobile");
+var company=$(".company");
+
+content.keydown(function(e){
+	var len=$(this).val().length+1;
+	var a=140-len;
+	if(a==0){
+		e.preventDefault();
+	}
+	$(".sub_txt").text(a);
+})
+
+title.blur(checkTitle);
+content.blur(checkContent);
+
+
+
+function checkTitle(){
+	var txt=title.val();
+	if(txt==""){$(".reg_tip").text("模版标题不能为空!");return false;}
+	else{
+		$(".reg_tip").text("");
+	     return true;
+    }
+};
+
+function checkContent(){
+	var txt=content.val();
+	if(txt==""){$(".reg_tip").text("短信内容不能为空!");return false;}
+	else{
+		$(".reg_tip").text("");
+	     return true;
+    }
+};
+
+
+
+form.submit(function(){ //ajax保存注册信息
+	if(checkTitle() && checkContent()){
+		
+		
+		//这里保存信息代码
+		alert("保存成功!")
+		window.location.href="message.html";//
+		return false;
+	}else{
+		return false;
+	}
+});
+
+</script>
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div class="hover"><a href="index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>订单耗费时间</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/data.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<header><div class="back"><a href="javascript:history.back()"></a></div>订单耗费时间</header>
+
+<div id="container"><!--主体内容开始-->
+
+<div class="common_tab"> 
+  <div><a href="time_data_percent.html"  class="current">订单耗费时间</a></div>
+  <div><a href="time_date_percent.html">订单耗费天数</a></div>
+  <div><a href="come_data_percent.html">订单进店次数</a></div>
+</div><!--tab end-->
+
+<div class="content_box">
+
+<div class="data_top">
+    <div class="address">
+       <span>车型：</span><select>
+         <option>F6</option>
+         <option>F3</option>
+         <option>F5</option>
+       </select>
+    </div>
+    <div class="date">
+      <a href="javascript:void(0)" class="sub"></a><div class="d_date"></div>  <a href="javascript:void(0)" class="add plus_disabled"></a>
+    </div>
+  </div>
+  
+
+<table width="100%" border="0" cellspacing="1" class="performance">
+  <tr>
+    <th width="20%"><a href="time_data_percent.html"><font class="red">比例</font></a></th>
+    <th width="20%">30天<span></span></th>
+    <th width="20%">60天<span></span></th>
+    <th width="20%">90天<span></span></th>
+    <th width="20%">其他<span></span></th>
+  </tr>
+  <tr>
+    <td>合计</td>
+    <td><a href="time_list.html">160</a></td>
+    <td><a href="time_list.html">100</a></td>
+    <td><a href="time_list.html">110</a></td>
+    <td><a href="time_list.html">120</a></td> 
+  </tr>
+  <tr class="red">
+    <td>No.1</td>
+    <td>160</td>
+    <td>120</td>
+    <td>180</td>
+    <td>150</td> 
+  </tr>
+  <tr>
+    <td>张传金</td>
+    <td><a href="time_list.html">160</a></td>
+    <td><a href="time_list.html">100</a></td>
+    <td><a href="time_list.html">110</a></td>
+    <td><a href="time_list.html">120</a></td> 
+  </tr>
+  <tr>
+    <td>王五</td>
+    <td><a href="time_list.html">160</a></td>
+    <td><a href="time_list.html">100</a></td>
+    <td><a href="time_list.html">110</a></td>
+    <td><a href="time_list.html">120</a></td> 
+  </tr>
+  <tr>
+    <td>李四</td>
+    <td><a href="time_list.html">160</a></td>
+    <td><a href="time_list.html">100</a></td>
+    <td><a href="time_list.html">110</a></td>
+    <td><a href="time_list.html">120</a></td> 
+  </tr>
+</table>
+ 
+  
+ </div> 
+
+
+
+</div><!--主体内容结束-->
+<script type="text/javascript">
+$(function(){
+	var a = new Date(),b=new Date();
+	var year,month,s;
+	
+	function getday(){
+		year=a.getFullYear();
+		month=(a.getMonth()+1)<10?"0"+(a.getMonth()+1):(a.getMonth()+1);
+	    s=year+ " - " +month;
+   	    $(".d_date").text(s);
+	}
+    getday();//初始化日期
+
+	$(".add").click(function(){ //日期增加一个月，获取日期ajax报表
+		if(parseInt(a.getTime())>=parseInt(b.getTime())){
+			$(this).addClass("plus_disabled");
+			alert("暂无该月报表!");
+		}else{
+			a.setMonth(a.getMonth() + 1);
+			getday();
+		}
+	});
+	$(".sub").click(function(){ //日期减少一个月，获取日期ajax报表
+	   $(".add").removeClass("plus_disabled");
+        a.setMonth(a.getMonth() - 1);
+        getday();
+	});
+});
+</script> 
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div class="hover"><a href="index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div><a href="../account/index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

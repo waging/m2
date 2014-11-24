@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<header>
+<div class="back"><a href="javascript:history.go(-1)"></a></div>
+深圳市粤迪汽车贸易有限公司
+</header>
+
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+
+  
+  <div class="content_box">
+  
+    <div class="search" style="margin-top:0; margin-bottom:10px;">
+    <p style="margin-bottom:5px; font-weight:bold;">请选择客户</p>
+    <div class="search_box">
+      <div><input type="text" placeholder="姓名/电话/级别" class="search_txt"/></div>
+      <input type="submit"  value="" id="submit"/>
+    </div>
+  </div><!--end search-->
+  
+  <div class="search_tip">请输入搜索关键字</div>
+  
+  
+
+    
+    
+ 
+<div class="custom_list">
+   <ul>
+     <li><span><em>客户<strong></strong></em></span><span>车型<strong></strong></span><span>级别<strong class="up"></strong></span><span>顾问<strong></strong></span></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>李鹏飞</em></span><span>&nbsp;</span><span>&nbsp;</span><span>刘一周</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>刘华军</em></span><span>F5645</span><span>&nbsp;</span><span>张鹏</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>赵小薇</em></span><span>&nbsp;</span><span>&nbsp;</span><span>丁中华</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>王二伍</em></span><span>&nbsp;</span><span>&nbsp;</span><span>郑斌</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>李鹏飞</em></span><span>F6</span><span>&nbsp;</span><span>胡瑞</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>刘华军</em></span><span>&nbsp;</span><span>&nbsp;</span><span>李思</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>赵小不薇</em></span><span>&nbsp;</span><span>&nbsp;</span><span>陈晓东</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>李鹏飞</em></span><span>f3</span><span>&nbsp;</span><span>刘一周</span></a></li>
+     <li><a href="javascript:void(0)" title="add_car.html" class="wj_href"><span><em>刘华军</em></span><span>&nbsp;</span><span>&nbsp;</span><span>张鹏</span></a></li>
+   </ul>
+ </div>    
+ <div class="more click_down">点击查看更多</div>
+ <div class="loaded">全部加载完毕!</div>
+
+    
+    
+    
+  </div>
+  
+</div>  
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#submit").click(function(){
+		var value=$(".search_txt").val();	
+		if(value==""){
+			$(".search_tip").show(300);
+			setTimeout(function(){
+				$(".search_tip").hide(300)
+			},3000);
+			return false;
+		}else{ //处理搜索
+			window.location.href="search_list.html";
+		}
+	});//end click
+	
+	
+	
+	var Num = 2;//点击加载更多
+	
+	  var op; //判断是否支持mouseup;
+	  var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; 
+	  var ver=ua.indexOf("android 2")>-1;
+      if(isAndroid){
+		  if(!ver){
+			  op="mouseup";
+		   }else{
+			 op="click";
+		   };  
+	  }else{
+		  op="click";
+	  };	
+	  
+	  $(".custom_list li .wj_href").bind(op,function(){
+	     window.location.href=this.title;
+       });
+	
+	  $(".more").bind(op,function(){
+		  $(".more").removeClass("click_down").addClass("loading");
+		  $.ajax({
+			type: "GET",
+			url: "page/"+Num+".html",
+			dataType: "html",
+			success: function(html){
+				$(".more").removeClass("loading").addClass("click_down");
+				$(".custom_list ul").append(html);
+				myScroll.refresh();//刷新DOM
+				if(Num>=5){
+				  $(".click_down").unbind("click");
+				  $(".more").hide()
+				  $(".loaded").show();
+				};
+				Num++;
+			}
+		  });	
+	 });//加载更多结束
+	
+	
+}) 
+</script>
+  
+  
+</body>
+</html>

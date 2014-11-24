@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/mobiscroll.js" type="text/javascript"></script>
+<link href="../style/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="javascript:history.back(-1)"></a></div>
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+
+  <div class="common_tab"> 
+      <div><a href="add_car.html">车辆</a></div>
+      <div><a href="add_custom.html" class="current">资料</a></div>
+      <div><a href="business_list.html">营业</a></div>
+      <div><a href="order_list.html">订单</a></div>
+ </div><!--tab end-->
+  
+  <div class="content_box">
+    
+    <div class="tip"></div>
+    
+    <div class="add_form"><!---表单开始-->
+    
+        <div class="form_box">
+           <label>车主：</label>
+           <div class="form_input"><input name="" type="text"></div><span>*</span>
+        </div>
+        
+      
+        
+      <div class="form_box">
+         <label>性别：</label>   
+         <div class="wj_radio">
+            <em><input type="radio" name="sex" checked ><strong>男</strong></em>
+            <em><input type="radio" name="sex"><strong>女 </strong><font class="red">&nbsp;*</font></em>
+         </div>
+      </div>
+        
+        
+        
+        <div class="form_box">
+           <label>电话：</label>
+           <div class="form_input"><input name="" type="tel"></div>
+           <span>*</span>
+        </div>
+         
+       <div class="form_box">
+           <label>备注：</label>
+           <div class="form_input"><input name="" type="text"></div>
+        </div>
+        
+        
+        
+        <div class="form_box">
+           <label>出生日期：</label> 
+           <div><input type="text" name="birthday" id="birthday"  readonly/></div>
+        </div>
+        
+        
+        <div class="form_box">
+            <label>地址：</label>
+             <div class="select_bg">
+             <select name="prov"></select>
+            </div>
+            <div class="select_bg  margin_none"> 
+             <select name="city"></select>
+            </div>
+        </div>
+        
+        <div class="form_box">
+          <label></label>  
+          <div class="select_bg area"> 
+           <select name="area"></select>
+          </div>
+        </div>
+        
+        <div class="form_box">
+        <label>客户来源：</label>
+        <div class="select_bg area"> 
+         <select name="" class="recommend">
+           <option>请选择来源</option>
+           <option>广告</option>
+           <option>会展</option>
+           <option>外拓</option>
+           <option>路过</option>
+           <option>其他</option>
+        </select>
+        </div>
+   
+      </div>
+        
+      
+        
+        <div class="form_box" style="border-top:1px dashed #ccc; padding-top:10px;">
+           <label>送修人：</label>
+           <div class="form_input"><input name="" type="text"></div>
+        </div>
+        
+        <div class="form_box">
+           <label>送修电话：</label>
+           <div class="form_input"><input name="" type="tel"></div>
+        </div>
+
+    </div><!---表单结束-->
+
+  </div>
+</div>  
+  
+</div><!--主体内容结束-->
+</form>
+<script type="text/javascript">
+
+
+
+
+$(function(){
+	
+new PCAS("prov","city","area");
+  $('#birthday').val('1988-03-15')
+	.scroller('destroy')
+	.scroller($.extend({preset :'date'},{  //日期
+		 theme:"ios",    //皮肤样式
+		 mode:"scroller",    //日期选择模式
+		 display: "bubble",  //显示方式 
+		 lang:"zh",          //语言
+		 dateFormat: 'yy-mm-dd',  //日期格式
+		 dateOrder: 'yymmdd',      //排列顺序
+		 endYear:2014,   //结束年
+		 startYear:1940  //起始年
+		 
+  })); //日期结束
+  
+	
+	if($(".recommend option:selected").val()=="推荐"){
+		$(".recomm_input").css("visibility","visible");
+	};
+	
+	$(".recommend").change(function(){
+		if($("option:selected",this).val()=="推荐"){
+			$(".recomm_input").css("visibility","visible");
+		}else{
+			$(".recomm_input").css("visibility","hidden");
+		}
+	});
+	
+	var form=$("form");
+	form.submit(function(){
+		if($(".recommend option:selected").val()=="推荐"){
+			if($(".person").val()==""){
+				$(".tip").show().text("请输入推荐人姓名!");
+				return false;
+				
+			}else{ //当选择推荐且输入推荐人信息后保存信息
+				window.location.href="custom_info.html";
+				return false;
+			}
+		}else{   //当选择非推荐后保存信息
+				window.location.href="custom_info.html";
+				return false;
+	   }
+	});
+})
+</script>
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>详情</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/group.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/sheet.js"></script>
+</head>
+
+<body>
+<header>
+<div class="back"><a href="javascript:history.back()"></a></div>
+详情
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+  
+
+
+
+<div class="content_group">
+
+<div class="group">
+    
+  
+     
+     <div class="group_list my_group"><!--评论开始-->
+       <div class="sale_name"><a href="business_list.html">张一三</a></div>
+       
+       <div class="group_content">
+          <p class="mycustom_info"><span class="color99">更新了营业,</span>客户：<span><a href="../custom/custom_info.html">李军飞</a></span><span>F3</span><span>进店</span><span>H级</span></p>
+          <p class="group_txt"><strong>经过</strong>：客户进店看了宝马X5车型系列，咨询了价 格，打算过几天再来买，并要求送汽车贴膜，脚踏等礼品，客户还比较了F6，F3等竞拍，并要求优惠2万。</p>
+          
+          <div class="group_oper"><!--赞和评论按钮-->
+             <span class="time">10小时前</span>
+             <a href="#" class="editor">编辑</a>
+             
+             <div class="right">
+                 <a href="javascript:void(0)" class="love">赞</a>
+                 <a href="javascript:void(0)" class="review">评论</a>
+             </div>
+             
+          </div><!--赞和评论按钮结束-->
+          
+          
+         <div class="reviews"><!--评论列表开始-->
+            <div class="arrow-up"></div>
+            
+            <div class="review_box">
+               <p class="love_content"><a href="#">李三</a>，<a href="#">王小五</a>，<a href="#">张明</a>，<a href="#">刘德华</a>，<a href="#">毛小兵</a>，<a href="#">刘一明</a></p>
+               
+                 <div class="review_list">
+                  <ul>
+                    <li class="leader">
+                     <div class="list_title">
+                      <span  class="to_object"><a href="my_business.html">李斌</a></span>
+                      <span class="time fl">09:24</span>
+                      <br/>尽量每天都回访一次，这个客户一定要拿下，可以先电话，再拜访。
+                      <a href="javascript:void(0)" class="click_bg"  title="李斌"></a>
+                      </div>
+                      <div></div>
+                    </li>
+                    
+                    <li>
+                      <div class="list_title">
+                        <span  class="to_object"><a href="my_business.html"  id="0_1">张一三</a>回复<a href="my_business.html" >李斌</a></span>
+                        <span class="time fl">09:24</span>
+                        <br/>每天都打电话会不会烦？
+                        <a href="javascript:void(0)" class="click_bg"  title="张一三"></a>
+                      </div>
+                      <div></div>
+                    </li>
+                    <li>
+                      <div class="list_title">
+                         <span  class="to_object"><a href="my_business.html"  id="0_2">王小五</a></span>
+                         <span class="time fl">09:24</span>
+                         <br>我顶你，肯定可以的！
+                         <a href="javascript:void(0)" class="click_bg"  title="王小五"></a>
+                      </div>
+                      <div></div>
+                    </li>
+                    <li>
+                      <div class="list_title">
+                         <span  class="to_object"><a href="my_business.html" title="张一三"  id="0_3">张一三</a>回复<a href="my_business.html">王小五</a></span>
+                         <span class="time fl">09:24</span>
+                         <br>谢谢支持！
+                         <a href="javascript:void(0)" class="click_bg"  title="张一三"></a>
+                      </div>
+                      <div></div>
+                    </li>
+                    <li>
+                      <div class="list_title">
+                        <span  class="to_object"><a href="my_business.html"   id="0_4">刘德华</a></span>
+                        <span class="time fl">09:24</span>
+                        <br>加油！
+                        <a href="javascript:void(0)" class="click_bg"  title="刘德华"></a>
+                       </div>
+                       <div></div>
+                     </li>
+                    <li>
+                      <div class="list_title">
+                        <span  class="to_object"><a href="my_business.html" id="0_5">张一三</a>回复<a href="my_business.html">刘德华</a></span>
+                        <span class="time fl">09:24</span>
+                        <br>大家一起加油！
+                        <a href="javascript:void(0)" class="click_bg"  title="张一三"></a>
+                      </div>
+                      <div></div>
+                    </li>
+                  </ul>
+                </div>
+                
+            </div>
+     
+           <div id="hide"></div>
+         </div><!--评论列表结束-->
+         
+         <div class="review_form replys"><!--回复框-->
+           <div class="review_input"><input type="text"  placeholder="回复 刘德华：" id="replys"/></div>
+           <div class="review_btn"><input type="submit"  value="发送" id="btns"/></div>
+         </div><!--回复框结束-->
+          
+       </div>
+       
+     </div><!--评论结束-->
+     
+<script type="text/javascript">
+$(function(){
+	
+
+	$(".group_list").click(function(e){
+		var target=e.target;	
+		if($(target).hasClass("love")){
+			$.ajax({
+				type: 'POST',
+				url:'',
+				data:'',
+				dataType: 'html',
+				success: function(result){
+					 $(target).html("已赞");//
+					 
+					 
+			   } 
+			})//end ajax
+			
+		};//end love
+		
+		if($(target).hasClass("review")){
+			$(".replys",this).removeClass("hide");	
+		}//end review
+		
+		if(target.nodeName=="A" && $(target).hasClass("click_bg")){	
+		
+			$("#hide").load("reply.html",function(result){
+				$(target).parent().next("div").html(result);
+				var person=$(target).attr("title");
+				$(target).parents("li").find("#reply").attr("placeholder","回复 "+person+"：");
+				$(target).parents("li").siblings().find(".reply").remove();	
+				$(this).html("");
+			});//end ajax	
+		   $(".replys",this).addClass("hide");	
+		}else if(target.id=="reply" || target.id=="btn"){	
+		
+		}else{
+			$(".reply").remove();
+		};//end if
+			
+	})//点击出现回复框
+	
+})
+</script>   
+     
+  </div>
+
+ </div> 
+
+
+
+
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div  class="hover"><a href="index.html"><span></span>工作圈</a></div>
+  <div><a href="index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> 
+  
+</div>
+
+</body>
+</html>

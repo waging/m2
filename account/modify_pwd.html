@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="javascript:history.back(-1)"></a></div>
+修改密码
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+ 
+  <div class="content_box">
+  
+  <div class="reg_tip"></div>
+  
+  <div class="modify_form"><!--表单开始-->
+     
+      <div class="form_box">
+        <label>原始密码：</label><div><input name="" type="password" placeholder="请输入旧密码" class="oldpwd"></div>
+        <span>*</span>
+      </div>
+      
+      <div class="form_box">
+         <label>新密码：</label><div><input name="" type="password" class="pwd"/></div>
+         <span>*</span>
+      </div>
+      
+      <div class="form_box">
+         <label>确认新密码：</label><div><input name="" type="password" class="sure_pwd"/></div>
+         <span>*</span>
+      </div>
+      
+  </div><!--表单结束-->
+   
+  </div>
+ </div>
+</div><!--主体内容结束-->
+</form>
+<script type="text/javascript">
+var form=$("form")
+var oldpwd=$(".oldpwd");
+var pwd=$(".pwd");
+var sure_pwd=$(".sure_pwd");
+
+oldpwd.blur(checkOldPwd);
+pwd.blur(checkPwd);
+sure_pwd.blur(checkSurePwd);
+
+form.submit(function(){ //ajax保存注册信息
+	if(checkOldPwd() && checkPwd() && checkSurePwd()){
+	
+		//这里保存完善注册信息代码
+		window.location.href="my_account.html";//注册成功后跳转至完善注册信息界面
+		return false;
+	}else{
+		return false;
+	}
+});
+
+function checkOldPwd(){
+	var txt=oldpwd.val();
+	if (txt == "") {
+        $(".reg_tip").text("旧密码不能为空!");
+        return false;
+     }else if (txt.length < 6 || txt.length > 32){
+        $(".reg_tip").text("旧密码必须是6-32个字符!");
+        return false;
+     }else {
+		 /*$.ajax({ //判断旧密码是否正确!
+			 type:"",
+			 dateType:"",
+			 url:"",
+			 success:function(){
+				 $(".reg_tip").text("");
+                 return true;
+			 }
+		 })*/
+         $(".reg_tip").text("");
+         return true;
+     }
+};
+
+function checkPwd(){
+	var txt=pwd.val();
+	if (txt == "") {
+        $(".reg_tip").text("密码不能为空!");
+        return false;
+     }else if (txt.length < 6 || txt.length > 32){
+        $(".reg_tip").text("密码必须是6-32个字符!");
+        return false;
+     }else {
+         $(".reg_tip").text("");
+         return true;
+     }
+};
+
+function checkSurePwd() {
+	var a = pwd.val(), b = sure_pwd.val();
+	if (b == "") {
+		$(".reg_tip").text("确认密码为空，请重新输入!");
+		return false;
+	} else if (b.length < 6 || b.length > 32) {
+		$(".reg_tip").text("确认密码必须是6-32个字符!");
+		return false;
+	} else if (a != b) {
+		$(".reg_tip").text("两次输入的密码不相等!");
+		return false;
+	} else {
+		$(".reg_tip").text("");
+		return true;
+	}
+};
+</script>
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div class="hover"><a href="index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

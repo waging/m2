@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/temp.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"> 
+var platform=function(){
+	if((navigator.userAgent.match(/Android/i))){
+		return "Android";
+	}else if((navigator.userAgent.match(/iPhone/i))){
+		return "Apple";
+	}else{
+		return "Other";
+	}
+};
+
+if(platform()=="Apple"){ 
+    document.write('<link href="../style/index_iphone.css?v002" rel="stylesheet" type="text/css">'); 
+}else{
+	document.write('<link href="../style/index.css?v002" rel="stylesheet" type="text/css">'); 
+} 
+</script>
+</head>
+
+<body>
+<style>
+
+.change_4s{position:absolute; right:0; top:0;-webkit-appearance:none; border:none; background:none; background:url(../images/change_4s.png) no-repeat center center; background-size:30px auto; width:45px; height:47px;  cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0.15);}
+.change_4s_item{position:absolute;left:0; top:47px; width:100%;border:1px #ddd solid; z-index:20;background:#f2f2f2;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.common_style{line-height:40px; background:#f2f2f2; position:fixed; top:0;border:1px #ddd solid; z-index:20;}
+.common_style ul li{ border-bottom:1px solid #e5e5e5; padding-left:32px;background-size:18px auto;}
+.common_style ul li:last-child{ border:none;}
+.common_style ul li a:hover{ color:#ff6600;}
+.common_style ul li a{ display:block;}
+.change_4s_item h3{ border-bottom:1px solid #ddd; height:35px; line-height:35px; padding-left:42px; background:url(../images/select.png) no-repeat 20px center; background-size:16px auto;}
+.change_4s_item ul li{line-height:35px; padding-left:20px;border-bottom:1px solid #e5e5e5; }
+.change_4s_item ul li:last-child{border:none;}
+.change_4s_item ul li a{ display:block;}
+.shadow{ background:rgba(0,0,0,0.6);position:absolute;left:0; top:0;width:100%; height:100%; z-index:19; display:none;}
+.hide{ display:none;}
+
+
+/*8.14管理员首页*/
+.charts{ overflow:hidden;}
+.manage_title{ font-size:14px; font-weight:bold; background:#e9e9e9; height:30px; line-height:30px;  width:100%;}
+.manage_title span{ margin-left:10px;}
+.charts ul li{float:left; width:25%; text-align:center; margin:15px 0;}
+.charts ul li .charts_circle{width:50px; height:50px; margin:0 auto; border-radius:25px;-webkit-border-radius:25px;background-repeat:no-repeat; background-position:center center; background-size:auto 24px; margin-bottom:5px;}
+.charts ul li .hero{ background-color:#f67474; background-image:url(../images/index_hero.png);}
+.charts ul li .wj_qinfen{ background-color:#00b2b0; background-image:url(../images/index_qinfen.png);}
+.charts ul li .xiaolv{ background-color:#3ba5f3; background-image:url(../images/index_xiaolv.png);}
+.charts ul li .dianping{ background-color:#ff8f35; background-image:url(../images/dianping.png);}
+
+.common_block{}
+.common_block ul li{float:left; width:25%; text-align:center; margin:15px 0;}
+.common_block ul li div{width:50px; height:50px; margin:0 auto; border-radius:10px;-webkit-border-radius:10px;background-repeat:no-repeat; background-position:center center; background-size:auto 24px; margin-bottom:5px;}
+.common_block ul li .index_tixing{  background-color:#c383e9; background-image:url(../images/index_tixing.png);}
+.common_block ul li .index_dys{ background-color:#0297df; background-image:url(../images/index_dys.png);}
+.common_block ul li .index_wld{ background-color:#ff8f35; background-image:url(../images/index_wld.png);}
+.common_block ul li .index_all{ background-color:#1a8c10; background-image:url(../images/index_all.png);}
+.common_block ul li .index_jindian{background-color:#00b2b0; background-image:url(../images/index_jindian.png);}
+.common_block ul li .index_yingye{background-color:#f67474; background-image:url(../images/index_yingye.png);}
+.common_block ul li .index_order{background-color:#1d6b98; background-image:url(../images/index_order.png);}
+.common_block ul li .index_jiaoche{background-color:#ff8f35; background-image:url(../images/index_jiaoche.png);}
+.common_block ul li .index_liudang{background-color:#ff8f35; background-image:url(../images/liudang.png);}
+.common_block ul li em{ font-style:normal; color:red;}
+/*8.148.14管理员首页*/
+</style>
+<header><input type="button" value="" class="left_bar"  id="left_bar"/>深圳市粤迪汽车贸易有限公司<input type="button" value="" class="change_4s" id="change_4s"/></header>
+
+
+<div id="container"><!--主体内容开始-->
+
+
+<div class="change_4s_item common_style hide">
+  <h3>请选择4S店</h3>
+  <ul>
+    <li><a href="javascript:void(0)">广州安迪佳4s店</a></li>
+    <li><a href="javascript:void(0)">深圳比亚迪金环怡</a></li>
+    <li><a href="javascript:void(0)">广州东风南方中大店</a></li>
+    <li><a href="javascript:void(0)">湖北三环海通别克</a></li>
+    <li><a href="javascript:void(0)">湖北中基奥迪</a></li>
+  </ul>
+</div>
+<div class="shadow change_4s_shadow"></div>
+
+
+<div class="left_bar_item"><!--切换销售售后-->
+  <ul>
+    <li><a href="index.html" class="xiaoshou">销售</a></li>
+    <li style="display:none"><a href="javascript:void(0)" class="shouhou">售后</a></li>
+    <li style="display:none"><a href="javascript:void(0)" class="bangong">办公</a></li>
+    <li><a href="../account/index.html" class="wajin">挖金</a></li>
+  </ul>
+</div><!--切换销售售后结束-->
+<div class="shadows hide"></div>
+
+<script type="text/javascript">
+
+function sildeMenu(selector){
+  $(selector).click(function(){
+	  if($(selector+"_item").hasClass("hide")){
+		  $(selector+"_item").removeClass("hide");	
+		  $(selector+"_shadow").show();
+		  $(".left_bar_item").removeClass("left_bar_on");
+		  $(".shadows").addClass("hide");
+	  }else{
+		  $(selector+"_item").addClass("hide");
+		  $(selector+"_shadow").hide();
+	  }
+	  $(".common_style").not(selector+"_item").addClass("hide");
+	  $(".shadow").not(selector+"_shadow").hide();
+	  
+  })
+};
+sildeMenu(".change_4s");
+$(".shadow").click(function(){
+		$(this).hide();
+		$(".change_4s_item").addClass("hide")
+});	
+
+$("#left_bar").click(function(){
+	$(".left_bar_item").toggleClass("left_bar_on");
+	$(".change_4s_item").addClass("hide");
+	$(".shadows").toggleClass("hide");
+	$(".shadow").hide();
+});
+
+$(".shadows").click(function(){
+		$(this).addClass("hide");
+		$(".left_bar_item").removeClass("left_bar_on");
+});	
+
+$(".shadows,.left_bar_item").bind("touchmove",function(e){
+	e.preventDefault();
+});	
+</script>
+
+ 
+<div class="my_search">   
+  <div class="my_search_box">
+    <div class="search_input"><input type="text" placeholder="姓名或电话" class="search_txt"/></div>
+    <div class="search_btn"><input type="submit"  value="" id="submit"/></div>
+  </div>
+</div><!--end search-->
+
+
+
+<div class="m2_custom"><!--客户状态-->
+ <ul>
+   <li class="m2_yixiang"><a href="yixiang.html"><span></span>意向</a></li>
+   <li class="m2_yuyue"><a href="yixiang.html"><span></span>预约</a></li>
+   <li class="m2_weixiu"><a href="yixiang.html"><span></span>维修</a></li>
+   <li class="m2_liushi"><a href="yixiang.html"><span></span>流失</a></li>
+   <li class="m2_zhuanyi"><a href="yixiang.html"><span></span>转移</a></li>
+   <li class="m2_zhuanru"><a href="yixiang.html"><span></span>转入</a></li>
+   <li class="m2_daiwanshan"><a href="yixiang.html"><span></span>待完善</a></li>
+   <li class="m2_suoyou"><a href="yixiang.html"><span></span>所有客户</a></li>
+ </ul>
+ <div class="clear"></div>
+</div><!--客户状态结束-->
+
+<div class="m2_custom_performance"><!--本日业绩-->
+ <ul>
+   <li>
+     <a href="#" class="m2_xinzeng"><span></span>新增：<em>500</em></a>
+     <a href="#" class="m2_jidian"><span></span>机电：<em>50</em></a>
+     <a href="#" class="m2_baoyang"><span></span>保养：<em>50</em></a>
+   </li>
+   <li>
+     <a href="#" class="m2_jingchang"><span></span>进厂：<em>50</em></a>
+     <a href="#" class="m2_banpeng"><span></span>钣喷：<em>500</em></a>
+     <a href="#" class="m2_baoxian"><span></span>保险：<em>50</em></a>
+   </li>
+   <li>
+     <a href="#" class="m2_yingye"><span></span>营业：<em>50</em></a>
+     <a href="#" class="m2_jingpin"><span></span>精品：<em>50</em></a>
+     <a href="#" class="m2_xubao"><span></span>续保：<em>50</em></a>
+   </li>
+ </ul>
+</div><!--本日业绩-->
+
+
+  
+</div><!--主体内容结束-->
+
+
+<div class="footer">
+  <div class="hover"><a href="index.html"><span></span>首页</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="../group/index.html"><span></span>工作圈<em class="so_count">30</em></a></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div> 
+</div>
+
+</body>
+</html>

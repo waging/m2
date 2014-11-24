@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>去电</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/data.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<header><div class="back"><a href= "javascript:history.back()"></a></div>去电</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+    
+
+<div class="content_box">
+
+<div class="data_top">
+    <div class="date">
+      <a href="javascript:void(0)" class="sub"  id="sub"></a><div class="d_date"><span id="starttime"></span> &nbsp;&nbsp;到&nbsp;&nbsp; <span id="endtime"></span></div><a href="javascript:void(0)" class="add plus_disabled" id="add"></a>
+    </div> 
+</div>
+
+  <table width="100%" border="0" cellspacing="1" class="performance">
+  
+   <tr class="thead">
+     <td colspan="4">本周去电合计：<span>50</span> 次</td>
+   </tr>
+  <tr>
+    <th width="25%">客户</th>
+    <th width="25%">车型</th>
+    <th width="25%">级别</th>
+    <th width="25%">顾问</th>
+  </tr>
+  <tr>
+    <td><a href="../custom/custom_info.html">王霜霜</a></td>
+    <td>F6</td>
+    <td>H</td>
+    <td>毛一斌</td>
+  </tr>
+  <tr>
+    <td><a href="../custom/custom_info.html">李郭京</a></td>
+    <td>F3</td>
+    <td>O</td>
+    <td>张三</td>
+  </tr>
+  <tr>
+    <td><a href="../custom/custom_info.html">张传侠</a></td>
+    <td>F4</td>
+    <td>RO</td>
+    <td>李宁</td>
+  </tr>
+  <tr>
+    <td><a href="../custom/custom_info.html">赵一虎</a></td>
+    <td>F2</td>
+    <td>A</td>
+    <td>刘德华</td>
+  </tr>
+  <tr>
+    <td><a href="../custom/custom_info.html">秦汗</a></td>
+    <td>F1</td>
+    <td>B</td>
+    <td>张明</td>
+  </tr>
+
+</table>
+  
+ </div> 
+
+
+ </div>
+</div><!--主体内容结束-->
+
+<script type="text/javascript">
+function formOnload()
+{
+//按周日为一周的最后一天计算
+ var date = new Date();
+ var this_day = date.getDay(); //今天是这周的第几天
+ var step_s = -this_day+1; //上周日距离今天的天数（负数表示）
+  if (this_day == 0) {
+   step_s = -7; // 如果今天是周日
+  }
+var step_m = 7 - this_day; // 周日距离今天的天数（负数表示）
+var thisTime = date.getTime();
+var monday = new Date(thisTime +  step_s * 24 * 3600* 1000);
+var sunday = new Date(thisTime +  step_m * 24 * 3600* 1000);
+//默认统计一周的时间
+var starttime = transferDate(monday); //本周一的日期 （起始日期）
+var endtime = transferDate(sunday);  //本周日的日期 （结束日期）
+document.getElementById("starttime").innerHTML = starttime;
+document.getElementById("endtime").innerHTML = endtime;
+}
+function transferDate(date) {  //格式化日期
+	
+ var yearTemp = date.getFullYear();
+ var monthTemp = date.getMonth()+1;
+ var dayTemp = date.getDate();
+  if(parseInt(monthTemp) < 10) {
+  monthTemp = "0" + monthTemp;
+ } 
+ 
+ if(parseInt(dayTemp) < 10) {
+  dayTemp = "0" + dayTemp;
+ }
+ return yearTemp + "-" + monthTemp + "-" + dayTemp;
+}
+
+//这段服务器上有可以删掉
+Date.prototype.addDays = function(d)
+{
+this.setDate(this.getDate() + d);
+};
+
+Date.prototype.addWeeks = function(w)
+{
+this.addDays(w * 7);
+};
+
+Date.prototype.Format = function(fmt) 
+{
+var o =
+{ 
+"M+" : this.getMonth() + 1, 
+"d+" : this.getDate(), 
+"h+" : this.getHours(), 
+"m+" : this.getMinutes(), 
+"s+" : this.getSeconds(),
+"q+" : Math.floor((this.getMonth() + 3) / 3),  
+"S" : this.getMilliseconds() 
+}; 
+if (/(y+)/.test(fmt)) 
+fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)); 
+for (var k in o) 
+if (new RegExp("(" + k + ")").test(fmt)) 
+fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length))); 
+return fmt; 
+}
+//这段服务器上有可以删掉
+
+
+formOnload();
+var add=document.getElementById("add");
+add.onclick=function(){ //增加一周
+	
+	var start=document.getElementById("starttime").innerHTML; //开始时间
+	var datearr=start.split("-");
+	var yearstart=datearr[0],monthstart=datearr[1]-1,daystart=datearr[2]; 
+	var nowstart = new Date(yearstart,monthstart,daystart);
+    nowstart.addWeeks(1);//加减日期
+	var click_date=nowstart.Format("yyyy-MM-dd");
+	document.getElementById("starttime").innerHTML=click_date;
+	
+	var end=document.getElementById("endtime").innerHTML; //起始时间
+	var datearrend=end.split("-");
+	var yearend=datearrend[0],monthend=datearrend[1]-1,dayend=datearrend[2]; 
+	var nowend = new Date(yearend,monthend,dayend);
+    nowend.addWeeks(1);//加减日期
+	var click_dateend=nowend.Format("yyyy-MM-dd");
+	document.getElementById("endtime").innerHTML=click_dateend;
+};
+
+
+var plus=document.getElementById("sub");
+plus.onclick=function(){ //日期减少一天
+    var start=document.getElementById("starttime").innerHTML; //开始时间
+	var datearr=start.split("-");
+	var yearstart=datearr[0],monthstart=datearr[1]-1,daystart=datearr[2]; 
+	var nowstart = new Date(yearstart,monthstart,daystart);
+    nowstart.addWeeks(-1);//加减日期
+	var click_date=nowstart.Format("yyyy-MM-dd");
+	document.getElementById("starttime").innerHTML=click_date;
+	
+	var end=document.getElementById("endtime").innerHTML; //起始时间
+	var datearrend=end.split("-");
+	var yearend=datearrend[0],monthend=datearrend[1]-1,dayend=datearrend[2]; 
+	var nowend = new Date(yearend,monthend,dayend);
+    nowend.addWeeks(-1);//加减日期
+	var click_dateend=nowend.Format("yyyy-MM-dd");
+	document.getElementById("endtime").innerHTML=click_dateend;
+};
+</script>
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div class="hover"><a href="index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div><a href="../account/index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

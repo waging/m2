@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>车辆补充</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery.js"></script>
+<link href="../style/mobiscroll.custom-2.6.2.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<form>
+<header>
+<div class="back"><a href="javascript:history.back()"></a></div>
+<div>提醒补充</div>
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+
+ 
+
+<div class="content_box">
+    
+    <div class="tip"></div>
+    
+       <div class="form_box">
+          <label>驾照到期：</label>
+         <div><input type="text" id="jiazhao" readonly/></div>
+       </div>
+        
+       <div class="form_box">
+          <label>车辆年检：</label>
+         <div><input type="text" id="nianjian" readonly/></div>
+       </div>
+       
+       <div class="form_box">
+          <label>黄绿标：</label>
+         <div><input type="text"  id="hlb" readonly/></div>
+       </div>
+       
+       <div class="form_box">
+         <div class="auto_defind"><input type="text" placeholder="自定义1" /></div>
+         <div><input type="text" id="auto1" readonly/></div>
+       </div>
+       
+       <div class="form_box">
+         <div class="auto_defind"><input type="text" placeholder="自定义2" /></div>
+         <div><input type="text" id="auto2" readonly/></div>
+       </div>
+        
+</div>      
+
+  
+</div><!--主体内容结束-->
+</form>
+<script type="text/javascript">
+
+$(function(){
+  $('#jiazhao,#nianjian,#hlb,#auto1,#auto2').val('1988-03-15')
+	.scroller('destroy')
+	.scroller($.extend({preset :'date'},{  //日期
+		 theme:"ios",    //皮肤样式
+		 mode:"scroller",    //日期选择模式
+		 display: "bubble",  //显示方式 
+		 lang:"zh",          //语言
+		 dateFormat: 'yy-mm-dd',  //日期格式
+		 dateOrder: 'yymmdd',      //排列顺序
+		 endYear:2014,   //结束年
+		 startYear:1940  //起始年
+		 
+  })); //日期结束
+  
+})
+</script>
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+</body>
+</html>

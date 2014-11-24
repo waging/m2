@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header>
+<div class="back"><a href="shop.html"></a></div>
+深圳市粤迪汽车贸易有限公司
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+  <div class="content_box">
+  
+  
+   <div class="pay_tab"> 
+     <ul>
+        <li><a href="shop.html"  class="current">挖金商城</a></li>
+        <li><a href="cart.html">购物车</a></li>
+        <li><a href="already_buy.html">购买记录</a></li>
+      </ul>
+    </div><!--tab end-->
+    <div class="clear"></div>
+    
+     <div class="tab">
+      <ul>
+        <li><a href="shop.html">短信服务</a></li>
+        <li><a href="buy_sheet.html" class="current">报表服务</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  
+
+    
+    <div class="buy_style">
+      <h1><input name="buy_style" type="radio" value="" checked>公司购买</h1>
+       <ul>
+        <li><label><input name="report" type="radio" value="300" checked>月费300元(月报)</label></li>
+        <li><label><input name="report" type="radio" value="1000">半年费1000元(月报+季报+半年报)</label></li>
+        <li><label><input name="report" type="radio" value="1600">一年年费1600元(月报+季报+半年报+年报)</label></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    
+     <div class="buy_style">
+      <h1><input name="buy_style" type="radio" value="">个人购买：</h1>
+      <ul>
+        <li><label><input name="report" type="radio" value="400">月费400元(月报)</label></li>
+        <li><label><input name="report" type="radio" value="1200">半年费1200元(月报+季报+半年报)</label></li>
+        <li><label><input name="report" type="radio" value="1800">一年年费1800元(月报+季报+半年报+年报)</label></li>
+      </ul>
+    </div>
+   
+    
+    <input name="" type="button" value="加入购物车" class="common_btn" id="buy">
+    
+  </div>
+  
+  <script type="text/javascript">
+     var buy=document.getElementById("buy");
+	 buy.addEventListener("click",function(){
+		 window.location.href="cart.html";
+	 },false)
+  </script>
+  
+  
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <ul>
+    <li><a href="../custom/index.html"><span></span>客户</a></li>
+    <li><a href="../remind/index.html"><span></span>提醒</a></li>
+    <li><a href="../data/index.html"><span></span>数据</a></li>
+    <li><a href="../public/index.html"><span></span>公共</a></li>
+    <li class="hover"><a href="index.html"><span></span>账户</a></li>
+  </ul>
+</div>
+
+</body>
+</html>

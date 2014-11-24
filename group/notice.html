@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>公告</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/public.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<header><div class="back"><a href="javascript:history.back()"></a></div>公告</header>
+
+<div id="container"><!--主体内容开始-->
+
+ 
+  <div class="content_box">
+  
+    <div class="search">
+        <div class="search_box"><input type="text" placeholder="请输入关键字" class="search_txt"/></div>
+        <div class="search_sub"><input type="submit"  value="" id="submit"/></div> 
+   </div><!--end search-->
+   
+   <div class="search_tip">请输入搜索关键字</div>
+  
+   
+   <div class="notice_list">
+     <ul>
+       <li class="system"><a href="notice_detail.html"><span>04-01-08</span> 今天下午进行系统维护，功能暂停</a></li>
+       <li><a href="notice_detail.html"><span>04-01-07</span> 关于2014年春节放假通知</a></li>
+       <li><a href="notice_detail.html"><span>04-01-06</span> 企业退休人员养老金再提高10%</a></li>
+       <li><a href="notice_detail.html"><span>04-01-05</span> 今天下午全体员工开会讨论下年销售..</a></li>
+       <li><a href="notice_detail.html"><span>04-01-08</span> 今天下午进行系统维护，功能暂停</a></li>
+       <li><a href="notice_detail.html"><span>04-01-07</span> 关于2014年春节放假通知</a></li>
+       <li><a href="notice_detail.html"><span>04-01-06</span> 企业退休人员养老金再提高10%</a></li>
+     </ul>
+   </div>
+    
+   
+ 
+  </div>
+  
+
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="../group/index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div  class="hover"><a href="index.html"><span></span>公共</a></div> 
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#submit").click(function(){
+		var value=$(".search_txt").val();	
+		if(value==""){
+			$(".search_tip").show(300);
+			setTimeout(function(){
+				$(".search_tip").hide(300)
+			},3000);
+			return false;
+		}else{ //处理搜索
+			window.location.href="notice_search.html";
+		}
+	})//end click
+}) 
+</script>
+
+</body>
+
+</html>

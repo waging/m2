@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>欢迎使用挖金4S管理系统</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/login.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+
+</head>
+
+<body>
+<header>
+<div class="back"><a href="index.html"></a></div>
+欢迎使用挖金4S管理系统
+</header>
+
+<div id="container" ><!--#container start-->
+ <div id="scroller">
+<form>
+  <div class="step">1. 注册账户  >  <span>2. 完善信息</span>  >  <span>3. 确认信息</span> </div>
+  <div class="reg_tip"></div>
+  <div class="reg_box">
+      <label>账号：</label>
+      <div><input name="" type="text" class="input user" ></div>
+      <span>*</span>
+  </div>
+  
+   <div class="reg_box">
+      <label>姓名：</label>
+      <div><input name="" type="text" class="input myname" ></div>
+      <span>*</span>
+  </div>
+  
+  <div class="reg_box">
+     <label>手机：</label>
+     <div><input name="" type="tel" class="mobile" ></div>
+     <span>*</span>
+  </div>
+  <div class="reg_box">
+     <label>密码：</label>
+     <div><input name="" type="tel" placeholder="不少于6位" class="pwd" ></div>
+     <span>*</span>
+  </div>
+   <div class="reg_box">
+      <label>确认密码：</label>
+      <div><input name="" type="tel" class="sure_pwd" ></div>
+      <span>*</span>
+   </div>
+   <div class="reg_box">
+     <label>验证码：</label>
+     <div><input name="" type="tel" placeholder="请输入手机验证码" class="code" ></div> 
+     <span><input name="" type="button" value="获取验证码" class="ver_code" >*</span>
+  </div>
+  
+  <div class="reg_box">
+     <label></label>
+     <em class="agree"><input name="ischecked" type="checkbox" value="" checked ><strong>已阅读并同意</strong><a href="#" class="xieyi" tabindex=-1>《挖金服务协议》</em></a>
+  </div>
+  
+   <div class="reg_box">
+     <label></label>
+      <div class="sub_btn"><input name="" type="submit" value="下一步" id="next" /></div> 
+      <span></span>
+  </div>
+  
+</form>
+
+ </div>
+</div><!--#container end-->
+<footer>版权所有：深圳市挖金科技有限公司</footer>
+<script type="text/javascript">
+
+      var op; //判断是否支持mouseup;
+	  var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; 
+	  var ver=ua.indexOf("android 2")>-1;
+      if(isAndroid){
+		$("#scroller").css("padding-bottom","none");
+    }else{
+		$("#scroller").css("padding-bottom","200px");
+	}	
+
+var form = $("form");
+var user=$(".user");
+var myname=$(".myname");
+var mobile=$(".mobile");
+var pwd=$(".pwd");
+var sure_pwd=$(".sure_pwd");
+var code=$(".code");
+var ischecked = $("input[name='ischecked']");
+
+//on blur
+user.blur(checkUser);
+myname.blur(checkName);
+mobile.blur(checkMobile);
+pwd.blur(checkPwd);
+sure_pwd.blur(checkSurePwd);
+code.blur(checkCode)
+
+form.submit(function(){ //ajax保存注册信息
+	if(checkUser() && checkName() && checkMobile() && checkPwd() && checkSurePwd() && checkCode() && isChecked()){
+		
+		
+		//这里保存注册信息代码
+		window.location.href="reg_next.html";//注册成功后跳转至完善注册信息界面
+		return false;
+	}else{
+		return false;
+	}
+});
+
+function checkUser(){
+	var txt=user.val();
+	if(txt==""){$(".reg_tip").text("帐号不能为空!");return false;}
+	else{
+	  /*$.ajax({
+		 dataType: "",
+		 url: "",
+		 type: "POST",
+		 success:function(){
+			 判断帐号已经存在!
+			 $(".reg_tip").text("该帐号已经存在!");
+		}
+	 });*/
+	 $(".reg_tip").text("");
+	 return true;
+	}
+	
+};
+function checkName(){
+	var txt=myname.val();
+	if(txt==""){$(".reg_tip").text("姓名不能为空!");return false;}
+	else{
+		$(".reg_tip").text("");
+	     return true;
+    }
+};
+
+function checkMobile(){
+	var txt=mobile.val();
+	var filter=/^1[3|4|5|8][0-9]\d{4,8}$/;
+	if(txt==""){
+		$(".reg_tip").text("手机号不能为空!");
+		return false;
+	}else if(!filter.test(txt)){
+		$(".reg_tip").text("手机号格式不正确!");
+		return false;
+	}else{
+	  $(".reg_tip").text("");
+	  return true;	
+	}
+};
+
+function checkPwd(){
+	var txt=pwd.val();
+	if (txt == "") {
+        $(".reg_tip").text("密码不能为空!");
+        return false;
+     }else if (txt.length < 6 || txt.length > 32){
+        $(".reg_tip").text("密码必须是6-32个字符!");
+        return false;
+     }else {
+         $(".reg_tip").text("");
+         return true;
+     }
+};
+
+function checkSurePwd() {
+	var a = pwd.val(), b = sure_pwd.val();
+	if (b == "") {
+		$(".reg_tip").text("确认密码为空，请重新输入!");
+		return false;
+	} else if (b.length < 6 || b.length > 32) {
+		$(".reg_tip").text("确认密码必须是6-32个字符!");
+		return false;
+	} else if (a != b) {
+		$(".reg_tip").text("两次输入的密码不相等!");
+		return false;
+	} else {
+		$(".reg_tip").text("");
+		return true;
+	}
+};
+
+ function checkCode() {
+	  var a = code.val();
+	  if (a == "") {
+		  $(".reg_tip").text("验证码不能为空!");
+		  return false;
+	  } else {
+		$(".reg_tip").text("");
+		return true;
+	  }
+};
+
+function isChecked() {
+	if (ischecked.is(':checked') == false) {
+		$(".reg_tip").text("请先同意挖金协议!");
+		return false;
+	} else {
+		$(".reg_tip").text("");
+		return true;
+	}
+};
+
+$(".ver_code").click(function(){
+	var no=$(".mobile").val();
+	if(no==""){
+		$(".reg_tip").text("请先输入手机号码！");	
+	}else{ //获取验证码发送到手机
+	}
+})
+</script>
+</body>
+</html>

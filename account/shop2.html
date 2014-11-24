@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+
+</head>
+
+<body>
+<header>
+<div class="back"><a href="index.html"></a></div>
+深圳市粤迪汽车贸易有限公司
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+
+<div class="common_tab"> 
+      <div><a href="shop.html"  class="current">短信充值</a></div>
+      <div><a href="already_buy.html">充值记录</a></div>
+</div><!--tab end-->
+
+  <div class="content_box">   
+    
+  <div class="buy_style">
+    <div class="style_item">请选择购买方式：<label><input name="buy_style" type="radio" value="1" checked> 公司</label>  <label><input name="buy_style" type="radio" value="2"> 个人</label></div>
+    <div class="clear"></div>
+  
+     <div class="style_list">
+        <ul>
+         <li>
+         <label>
+             <span><input name="pay" type="radio" value="5000" checked ></span>
+             <span>5000</span>
+             <span>元：</span>
+             <span><strong>83333</strong>条</span>
+             <span>(0.06元/条)</span>
+          </label>
+        </li>
+        
+         <li>
+           <label>
+             <span><input name="pay" type="radio" value="" class="auto"></span>
+             <span><input type="tel"  class="count_input" placeholder="更高金额" disabled/></span>
+             <span>元：</span>
+             <span><strong></strong>条</span>
+             <span>(0.06元/条)</span>
+           </label>
+        </li>
+      </ul>
+     </div><!--style_list-->
+     
+     <div class="style_list">
+        <ul>
+         <li>
+         <label>
+             <span><input name="pay1" type="radio" value="10"  checked></span>
+             <span>10</span>
+             <span>元：</span>
+             <span><strong>111</strong>条</span>
+             <span>(0.09元/条)</span>
+          </label>
+        </li>
+         <li>
+           <label>
+             <span><input name="pay1" type="radio" value="" class="auto"></span>
+             <span><input type="tel"  class="count_input" placeholder="更高金额" disabled/></span>
+             <span>元：</span>
+             <span><strong></strong>条</span>
+             <span>(0.09元/条)</span>
+           </label>
+        </li>
+      </ul>
+     </div><!--style_list-->
+      
+  </div>
+ 
+<div class="clear"></div>
+   
+    <div class="price">金额：<span>5000元</span></div>
+    
+    <div class="pay_style"><input type="radio" name="radio" checked/> 支付宝支付</div>
+    
+    <input name="" type="submit" value="去支付" class="common_btn">
+    
+  </div>
+  
+<script type="text/javascript">
+  $(".style_item input").click(function(){ //选项卡
+	   var i=parseInt($(this).val())-1;
+	  $(".buy_style .style_list:eq("+i+")").show();
+	  $(".buy_style .style_list:eq("+i+")").siblings(".style_list").hide();
+	  $(".buy_style .style_list:eq("+i+")").siblings(".style_list").find(".count_input").attr("disabled",true).val("");
+	  var check=$(".buy_style .style_list:eq("+i+") ul li:first input[type='radio']");
+	  check.attr("checked",true);
+	  $(".price span").html(check.val()+"元");
+  });
+  
+  
+  var radio=$(".style_list ul li input[type='radio']"); 
+  radio.click(function(){ //点击各选项
+	 $(this).parent().siblings().find(".count_input").attr("disabled",false);
+	 $(this).parents("li").siblings().find(".count_input").attr("disabled",true);
+	 if($(this).hasClass("auto")){
+		 if($(this).parent().siblings().find(".count_input").val()==""){
+		   $(".price span").html("请输入金额！")
+		 }
+	 }else{
+		 $(".price span").html(this.value+"元");
+     };
+  });
+  
+ $(".count_input").blur(messageOne);
+ function messageOne(){ //文本框失去焦点触发
+	var n=parseInt($(this).parents("li").siblings("li").find("input[type='radio']").val());
+	if(n==5000){
+		i=0.06;
+	}else if(n=10){
+		i=0.09;
+    };
+	if($(this).value==""){
+		$(".price span").html("请输入金额!");	
+		return false;
+	}else if(/[^\d]/g.test($(this).val())){
+		$(".price span").html("只能输入数字!");
+		return false;
+	}else if($(this).val()<=n){
+		$(".price span").html("必须大于"+n+"元!");
+		return false;
+	}else{
+		var val=($(this).val()/i).toFixed(0);
+		$(this).parent().siblings("span").find("strong").html(val);
+		$(".price span").html($(this).val()+"元");
+	}
+};
+  
+$("input[type='submit']").click(function(){ //加入购物车
+   var val=$(".price span").html();
+   if(val.indexOf("请输入")>=0 || val.indexOf("只能输入数字")>=0 || val.indexOf("必须大于")>=0){
+	   return false;
+   }else{
+	   window.location.href="";
+   }
+});
+</script>
+  
+
+
+ 
+ </div> 
+</div><!--主体内容结束-->
+
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> <div class="hover"><a href="index.html"><span></span>挖金</a></div>
+</div>
+
+</body>
+</html>

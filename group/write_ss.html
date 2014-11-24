@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>说说</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/group.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<header>
+  <div class="back"><a href="javascript:history.back()"></a></div>
+  写说说
+  <div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn" id="savebtn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+
+<div class="content_box">
+
+  <div class="ss_tip"></div>
+  
+  <div class="ss_textarea"><textarea name="" cols="" rows="" placeholder="说点什么吧..." ></textarea></div>
+ 
+ 
+ 
+ <div class="ss_info">请输入字数在1-140字之间！</div>
+ 
+  
+ </div> 
+
+</div><!--主体内容结束-->
+
+<script type="text/javascript">
+  $("#savebtn").click(function(){
+	  var txt=$(".ss_textarea textarea").val();
+	  var len=txt.length;
+	  if(len < 1 || len >140){
+		  $(".ss_tip").html("字数在1-140字之间！")
+	  }else{
+		  $(".ss_tip").html("");
+	  }
+  })
+</script>
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div  class="hover"><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div> 
+</div>
+
+</body>
+</html>

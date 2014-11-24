@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/public.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<header>
+<div class="back"><a href="index.html"></a></div>
+深圳市粤迪汽车贸易有限公司
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+
+ <div class="common_tab"> 
+        <div><a  href="index.html"  class="current">公告</a></div>
+        <div><a  href="rank.html">排行</a></div>
+  </div><!--tab end-->
+  
+ 
+  <div class="content_box">
+  
+    <div class="search">
+        <div class="search_box"><input type="text" placeholder="请输入关键字" class="search_txt"/></div>
+        <div class="search_sub"><input type="submit"  value="" id="submit"/></div> 
+   </div><!--end search-->
+   
+  <div class="search_tip">请输入搜索关键字</div>
+  
+   
+   <div class="search_result">搜索结果如下：</div>
+   
+   <div class="notice_list">
+     <ul>
+       <li class="system"><a href="notice_detail.html"><span>04-01-08</span> 今天下午进行系统维护，功能暂停</a></li>
+       <li><a href="notice_detail.html"><span>04-01-07</span> 关于2014年春节放假通知</a></li>
+       <li><a href="notice_detail.html"><span>04-01-06</span> 企业退休人员养老金再提高10%</a></li>
+       <li><a href="notice_detail.html"><span>04-01-05</span> 今天下午全体员工开会讨论下年销售..</a></li>
+       <li><a href="notice_detail.html"><span>04-01-08</span> 今天下午进行系统维护，功能暂停</a></li>
+       <li><a href="notice_detail.html"><span>04-01-07</span> 关于2014年春节放假通知</a></li>
+       <li><a href="notice_detail.html"><span>04-01-06</span> 企业退休人员养老金再提高10%</a></li>
+       <li><a href="notice_detail.html"><span>04-01-05</span> 今天下午全体员工开会讨论下年销售..</a></li>
+     </ul>
+   </div>
+    
+   <div class="more click_down">点击查看更多</div>
+   <div class="loaded">全部加载完毕!</div>
+    
+  </div>
+  
+ </div>
+</div><!--主体内容结束-->
+
+<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒</a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div  class="hover"><a href="index.html"><span></span>公共</a></div>
+  <div><a href="../account/index.html"><span></span>挖金</a></div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#submit").click(function(){
+		var value=$(".search_txt").val();	
+		if(value==""){
+			$(".search_tip").show(300);
+			setTimeout(function(){
+				$(".search_tip").hide(300)
+			},3000);
+			return false;
+		}else{ //处理搜索
+			$.ajax({
+				type:"",
+				dateType:"",
+				url:"",
+				data:"",
+				success:function(){
+				}
+			})
+		}
+	});//end click
+	
+	var op; //判断是否支持mouseup;
+	var ua = navigator.userAgent.toLowerCase();
+	var isAndroid = ua.indexOf("android") > -1; 
+	var ver=ua.indexOf("android 2")>-1;
+	if(isAndroid){
+		if(!ver){
+			op="mouseup";
+		 }else{
+		   op="click";
+		 };  
+	}else{
+		op="click";
+	};
+	
+	var Num = 2;//点击加载更多
+	$(".more").bind(op,function(){
+		$(".more").removeClass("click_down").addClass("loading");
+		$.ajax({
+		  type: "GET",
+		  url: "page/"+Num+".html",
+		  dataType: "html",
+		  success: function(html){
+			  $(".more").removeClass("loading").addClass("click_down");
+			  $(".notice_list ul").append(html);
+			  myScroll.refresh();//刷新DOM
+			  if(Num>=5){
+				$(".click_down").unbind("click");
+				$(".more").hide()
+				$(".loaded").show();
+			  };
+			  Num++;
+		  }
+		});	
+   });//加载更多结束
+	
+}) 
+</script>
+  
+</body>
+</html>

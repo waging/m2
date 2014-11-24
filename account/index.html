@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/account.css" rel="stylesheet" type="text/css">
+<link href="../style/temp.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+<header>
+<input type="button" value="" class="left_bar"  id="left_bar"/>
+深圳市粤迪汽车贸易有限公司
+</header>
+
+
+
+
+
+<div id="container"><!--主体内容开始-->
+
+
+<div class="left_bar_item"><!--切换销售售后-->
+  <ul>
+    <li><a href="../custom/index.html" class="xiaoshou">销售</a></li>
+    <li style="display:none"><a href="javascript:void(0)" class="shouhou">售后</a></li>
+    <li style="display:none"><a href="javascript:void(0)" class="bangong">办公</a></li>
+    <li><a href="../account/index.html" class="wajin">挖金</a></li>
+  </ul>
+</div><!--切换销售售后结束-->
+<div class="shadows hide"></div>
+ 
+ 
+ <script type="text/javascript">
+
+
+$("#left_bar").click(function(){
+	$(".left_bar_item").toggleClass("left_bar_on");
+	$(".change_4s_item").addClass("hide");
+	$(".shadows").toggleClass("hide");
+	$(".shadow").hide();
+});
+
+$(".shadows").click(function(){
+		$(this).addClass("hide");
+		$(".left_bar_item").removeClass("left_bar_on");
+});	
+
+$(".shadows,.left_bar_item").bind("touchmove",function(e){
+	e.preventDefault();
+});	
+</script>
+
+  <div class="content_box">
+   <div class="common_list">
+
+     <ul>
+       <li><a href="account_list.html"  class="my_acctount">我的账户</a></li>
+       <li><a href="message.html"  class="message_alert">短信模版</a></li>
+       <!--<li><a href="zhifu.html"  class="zhifu">费用支付</a></li>-->
+       <!--<li><a href="../custom/has_car.html"  class="add_buys">保有增购</a></li>-->
+       
+       <!--<li class="border3"><a href="../account/review.html"  class="qa">反馈意见</a></li>
+       <li><a href="../account/help.html"  class="help">帮助中心</a></li>-->
+       <li><a href="about_list.html" class="about">关于我们</a></li>
+       <!--<li class="border3"><a href="../account/about_version.html" class="version">关于版本</a></li>
+       <li><a href="../member/index.html" class="quit">退出挖金</a></li>-->
+   </ul>
+   </div>
+
+    
+  </div>
+ 
+</div><!--主体内容结束-->
+
+<!--<div class="footer">
+  <div><a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="../group/index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+  <div class="hover"><a href="index.html"><span></span>挖金</a></div> 
+</div>
+-->
+
+</body>
+</html>

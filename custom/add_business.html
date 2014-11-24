@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" /> 
+<meta content="telephone=no" name="format-detection">
+<title>深圳市粤迪汽车贸易有限公司</title>
+<link href="../style/common.css" rel="stylesheet" type="text/css" />
+<link href="../style/custom.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script  type="text/javascript" src="../js/WdatePicker.js"></script>
+<link href="../style/temp.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<style>
+.pop_confirm{background:rgba(0,0,0,0.3); width:100%; height:100%; position:fixed; z-index:10; display:none; } 
+.pop_message{margin:0 auto; top:20%; z-index:20; position:fixed; width:80%; left:10%;text-align: center;border-radius: 6px;-webkit-border-radius: 6px;-moz-border-radius: 4px; background:#fff;}
+.pop_txt{ text-align:center; font-size:14px; margin-top:15px; border-bottom:1px solid #ddd; padding-bottom:15px;}
+.pop_btn{ display:-webkit-box; display:-moz-box; height:50px; line-height:50px; color:#3a71b1; font-weight:bold; border-top:1px solid #ddd;}
+.pop_btn div{-webkit-box-flex:1; width:50%;}
+.pop_btn div:first-child{border-right:1px solid #ddd;}
+.pop_btn div a{ display:block; color:#006dd2; font-size:16px;}
+.pop_btn div a.cancle{ font-weight:normal;}
+.order_detail{ text-align:left; line-height:22px; padding:10px; overflow:hidden; margin-bottom:2px;}
+.order_detail p{ font-weight:bold; clear:both; margin-bottom:5px;}
+.order_detail ul li{ float:left; width:50%;}
+</style>
+<div class="pop_confirm">
+<div class="pop_message">
+    <div class="pop_txt">确定提交订单？</div>
+    
+    <div class="order_detail">
+        <p>姓名：张小华</p>
+        <ul>
+           <li>品牌：比亚迪<li/>
+           <li>车型：舒适型<li/>
+           <li>型号：F6<li/>
+           <li>颜色：白色<li/>
+        </ul>
+    </div>
+    
+    <div class="clear"></div>
+    <div class="pop_btn">
+       <div><a href="javascript:void(0)" class="cancle">取消</a></div>
+       <div><a href="javascript:void(0)">确定</a></div>
+    </div>
+    
+</div>
+</div>
+
+<form>
+<header>
+<div class="back"><a href="business_list.html"></a></div>
+<div class="oper_btn"><input name="" type="submit" value="保存" class="ok_btn"></div>
+</header>
+
+<div id="container"><!--主体内容开始-->
+ <div id="scroller">
+
+ <div class="common_tab"> 
+      <div><a href="add_car.html">车辆</a></div>
+      <div><a href="add_custom.html">资料</a></div> 
+      <div><a href="business_list.html"  class="current">营业</a></div>
+      <div><a href="order_list.html">订单</a></div>
+</div><!--tab end-->
+  
+  <div class="content_box">
+
+    <div class="tip"></div>
+    <div class="add_form"><!---表单开始-->
+    
+        <div class="form_box">
+           <label>计划日期：</label>
+           <div style="border:none; background:none; line-height:2.84em; padding-left:0;">2014-1-9</div>
+        </div>
+        
+        <div class="form_box">
+           <label>营业方式：</label>
+             <div class="select_bg area"> 
+             <select name="" class="business_style">
+               <option>请选择营业类型</option>
+               <option>进厂</option>
+               <option>来电</option>
+               <option>去电</option>
+               <option>上门</option>
+               <option>救援</option>
+               <option>其他</option>
+            </select>
+            </div>
+            <span>*</span>
+        </div>
+        
+        <div class="form_boxs">
+          <label>营业内容：</label>
+          <div class="add_bussiness">
+          
+             
+             <div class="bus_box">
+                <span>经过：</span>
+                <div><textarea name="" cols="" rows=""></textarea></div> 
+             </div>
+             
+            <div class="bus_box">
+                <span>结果：</span>
+                <div><textarea name="" cols="" rows=""></textarea></div> 
+             </div>
+             
+              <div class="bus_box">
+                <span>行动：</span>
+                <div><textarea name="" cols="" rows=""></textarea></div> 
+             </div>          
+          </div>
+      </div>
+      <div  class="necessity red"><label></label>HABC不少于30个字。</div>
+      
+      
+     
+      
+      
+      
+      
+       <div class="form_box">
+        <label>营业结果：</label>
+        <div class="select_bg area"> 
+         <select name="" class="result">
+           <option value="请选择营业结果">请选择营业结果</option>
+           <option value="H">H (2天回访)</option>
+           <option value="A">A (7天回访)</option>
+           <option value="B">B (14天回访)</option>
+           <option value="C">C (28天回访)</option>
+           <option value="O">O (3天回访)</option>
+           <option value="LO">LO (3天回访)</option>
+           <option value="2m">2m (7天回访)</option>
+           <option value="3m">3m (13111规则)</option>
+           <option value="6m">6m (1天回访)</option>
+           <option value="1Y">1Y (7天回访)</option>
+           <option value="N">N (不回访)</option>
+           <option value="I">I (3天回访)</option>
+           <option value="RI">RI (3天回访)</option>
+        </select>
+        </div>
+       <span>*</span>
+   
+      </div>
+  
+  
+     
+    <div class="repair_infor weixiu_infor" style="display:none;"><!--维修单开始--> 
+    
+    
+       <div class="form_box">
+         <label>维修单：</label>  
+         <div>首保,一般维修,钣喷,自费：￥5000,保险推荐：是<a href="javascript:void(0)" class="close_form">[收起]</a></div>
+      </div> 
+
+ 
+      
+      <div class="pop_repair">
+       <h3>填写维修单</h3>
+
+         
+         
+         <div class="form_box" style="margin-top:10px;">
+            <label>预约：</label>
+            <div><input name="" type="text"></div>
+          </div>
+          
+          <div class="form_box state_time">
+            <label>开始：</label><span>2014-10-12</span>
+          </div>
+          <div class="form_box state_time">
+            <label>结束：</label><span>2014-10-12</span>
+          </div>
+          
+          <div class="form_box">
+            <label>实际公里：</label>
+           <div><input name="" type="tel"></div>
+         </div>
+         
+        <div class="add_box">
+           <span>维修类别：</span>
+           <div>
+             <ul>
+               <li><input name="" type="checkbox" value="首保"><em>首保</em></li>
+               <li><input name="" type="checkbox" value="定保"><em>定保</em></li>
+               <li><input name="" type="checkbox" value="维修"><em>维修</em></li>  
+             </ul>
+           </div>
+        </div>
+        
+        <div class="add_box">
+         <span>维修内容：</span>
+         <div>
+           <ul>
+             <li><input name="" type="checkbox" value="机电"><em>机电</em></li>
+             <li><input name="" type="checkbox" value="钣喷"><em>钣喷</em></li>
+             <li><input name="" type="checkbox" value="精品"><em>精品</em></li>  
+           </ul>
+         </div>
+      </div>
+      
+      <div class="form_box">
+         <label>维修费用：</label>  
+         <div class="modify_free">
+             <div>自费 ￥<input type="tel" ></div>
+             <div>保险 ￥<input type="tel" ></div>
+             <div>索赔 ￥<input type="tel" ></div>
+             <div>其他 ￥<input type="tel" ></div>
+         </div> 
+      </div>
+      
+      <div class="form_box" style="margin-top:10px; margin-bottom:10px;">
+         <label>保险推荐：</label>   
+         <p class="wj_radio secure_item" style="width:145px;">
+            <em><input type="radio" name="baoxian" checked ><strong>否</strong></em>
+            <em><input type="radio" name="baoxian" id="yes"><strong>是</strong></em>
+         </p>
+         
+        <p class="select_bg area" style="display:none; height:2.5em;line-height:2.5em;" id="secure"> 
+             <select name="" class="business_style" style="width:158px;height:2.5em; padding:0; line-height:2.5em;">
+               <option>请选择保险公司</option>
+               <option>中国平安</option>
+               <option>中国人寿</option>
+               <option>太平洋保险</option>
+               <option>泰康人寿</option>
+               <option>友邦保险</option>
+               <option>生命人寿</option>
+            </select>
+            </p>
+      </div>
+      
+      
+      <div class="form_box">
+          <label>下次保养：</label>
+          <div><input name="" type="text"></div>
+       </div>
+       
+      <div class="form_box">
+         <label>满意度：</label>   
+         <div class="wj_radio">
+            <em><input type="radio" name="manyi" checked ><strong>很满意</strong></em>
+            <em><input type="radio" name="manyi"><strong>一般</strong></em>
+            <em><input type="radio" name="manyi"><strong>不满意</strong></em>
+         </div>
+      </div>
+      
+      
+      <div class="form_box">
+          <label>备注：</label>
+          <div><input name="" type="text"></div>
+       </div>
+ 
+     
+       
+       <div class="form_box repair_btn">
+          <label>&nbsp;</label>
+          <div><button  class="repair_btn" type="button">收起</button></div>
+       </div>         
+    </div>
+    
+    
+   </div><!--维修单结束-->
+      
+  
+  
+  <div class="repair_infor baoxian_infor" style="display:none"><!--保险单开始-->
+    
+       <div class="form_box">
+         <label>保险单：</label>  
+         <div>中国平安,201411180523,生效时间：2014-11-18,结束时间：2014-11-18,交强险：￥5000<a href="javascript:void(0)" class="close_form">[收起]</a></div>
+      </div> 
+
+      
+      <div class="pop_repair">
+       <h3>填写保险单</h3>
+      
+       
+          <div class="form_box">
+            <label>保险公司：</label>
+           <div><input name="" type="text"><span>*</span></div>
+         </div>
+         
+         <div class="form_box">
+            <label>保险单号：</label>
+           <div><input name="" type="tel"></div>
+         </div>
+         
+         <div class="form_box">
+            <label>生效：</label>
+           <div><input name="" type="text"></div>
+         </div>
+         
+         <div class="form_box">
+            <label>结束时间：</label>
+           <div><input name="" type="text"><span>*</span></div>
+         </div>
+         
+         <div class="form_box">
+         <label>险种保额：</label>  
+         <div class="xianzhong">
+            <ul>
+               
+               <li>第三者 ￥<input type="tel" ></li>
+               <li>司机险 ￥<input type="tel" ></li>
+               <li>乘客险 ￥<input type="tel" ></li>
+               <li>车损险 ￥<input type="tel" ></li>
+               <li>盗抢险 ￥<input type="tel" ></li>
+               <li>玻璃险 ￥<input type="tel" ></li>
+              
+               <li>不计免赔 ￥<input type="tel" ></li>
+               <li>其他 ￥<input type="tel" ></li>
+            </ul>
+         </div> 
+       </div> 
+       
+       <div class="form_box repair_btn" style="margin-top:0;">
+          <label>&nbsp;</label>
+          <div><button  class="repair_btn" type="button">收起</button></div>
+       </div>         
+    </div>
+    
+    
+   </div><!--保险单结束-->
+       
+
+<script type="text/javascript">
+$(function(){  //维修保险单JS
+
+	$(".result").change(function(){
+		
+		 $(".repair_infor").hide().removeClass("open repair_border");
+		 $(".close_form").html("[展开]");
+		 
+		if($(this).val()=="O"){
+		   $(".weixiu_infor").show().addClass("open repair_border");
+		   $(".weixiu_infor .close_form").html("[收起]");
+		}else if($(this).val()=="LO"){
+			$(".weixiu_infor").show().removeClass("open repair_border");
+			$(".weixiu_infor .close_form").html("[展开]");
+		}else if($(this).val()=="I"){
+			$(".baoxian_infor").show().addClass("open repair_border");
+		    $(".baoxian_infor .close_form").html("[收起]");
+		}else if($(this).val()=="RI"){
+			$(".baoxian_infor").show().removeClass("open repair_border");
+			$(".baoxian_infor .close_form").html("[展开]");
+		}
+		
+	});
+
+	$(".secure_item em input").click(function(){
+		if(this.id=="yes"){
+			$("#secure").show();
+		}else{
+			$("#secure").hide();
+		}
+	});
+	$(".repair_infor").click(function(e){
+		var target=e.target;
+		if(target.nodeName=="A" && $(target).hasClass("close_form")){
+			if($(target).html()=="[收起]"){
+				$(this).removeClass("open repair_border");
+				$(target).html("[展开]");
+			}else{
+				$(this).addClass("open repair_border");
+				$(target).html("[收起]");
+			}
+		};
+		
+		if(target.nodeName="BUTTON" && $(target).hasClass("repair_btn")){
+			$(this).removeClass("open repair_border");
+			$(".form_box div a",this).html("展开");
+		}
+	});
+})
+</script>    
+      <div class="form_box">
+          <label>下次访问：</label> 
+        <div onclick="WdatePicker({isShowClear:false,maxDate:'2013-12-20'})" class="date_input">2013-12-20</div>
+      </div>
+
+       <div class="form_box">
+        <label>短信模版：</label>
+        <div class="select_bg area"> 
+         <select name="" id="message">
+           <option>请选择信息模板</option>
+           <option>离店</option>
+           <option>订车</option>
+           <option>交车</option>
+           <option>生日</option>
+           <option>其他</option>
+        </select>
+        </div>
+   
+      </div>
+      
+      <div class="form_box">
+        <label>短信内容：</label>
+        <div> 
+          <textarea>欢迎下次光临【南海雨想】</textarea>
+        </div>
+      </div>
+        
+        
+    </div><!---表单结束-->
+ 
+  </div>
+  
+
+ </div> 
+</div><!--主体内容结束-->
+</form>
+
+
+
+<div class="repair_bg"><!--填写维修单开始-->
+    
+</div><!--填写维修单结束-->
+
+
+<div class="footer">
+  <div   class="hover"> <a href="../custom/index.html"><span></span>客户</a></div>
+  <div><a href="../custom/custom_index.html"><span></span>客户</a></div>
+  <div><a href="../remind/index.html"><span></span>提醒<em class="so_count">200</em></a></div>
+  <div><a href="index.html"><span></span>工作圈<em class="so_count">30</em></a></div>
+  <div><a href="../data/index.html"><span></span>数据</a></div>
+</div>
+
+
+
+
+<script type="text/javascript">
+$(function(){
+
+
+	   
+
+	   
+	  var buss_style=$(".business_style");
+	  var progress=$(".progress"); 
+	  var result=$(".result");
+	  
+	  buss_style.change(bussinessStyle);
+	  progress.blur(checkProgress);
+	  result.change(checkResult);
+	   
+	   function bussinessStyle(){
+		  if($(".business_style option:selected").val()=="请选择营业类型"){
+			  $(".tip").show().text("请选择营业类型!");
+			  return false;
+		  }else{
+			  $(".tip").hide();
+			  return true;
+		  }
+	   };
+	   
+	   function checkProgress(){
+		   if($(".progress").val()==""){
+			   $(".tip").show().text("请输入营业经过!");
+			   return false;
+		   }else{
+			  $(".tip").hide();
+			  return true; 
+		   }
+	   };
+	   
+	   function checkResult(){
+		   if($(".result option:selected").val()=="请选择营业结果"){
+			   $(".tip").show().text("请选择营业结果!");
+			   return false;
+		   }else{
+			   $(".tip").hide();
+			   return true; 
+		   }
+	   };
+
+
+	  $(".pop_btn a").click(function(){
+		  
+		
+	    if($(this).hasClass("cancle")){
+			//alert(a);
+			$(".pop_confirm").hide();
+			return false;
+			
+		}else{
+			
+			
+			$(".pop_confirm").hide()
+		}
+	})
+		   
+	 $("form").submit(function(){
+		 
+		
+		$(".pop_confirm").show();
+		$(".pop_txt").html("确定提交订单吗");
+		
+		
+		 
+      return false;
+	
+	
+	function showPop(txt){
+		$(".pop_confirm").show();
+		$(".pop_txt").html(txt);
+		return false;
+	};
+	
+	function hidePop(){
+		$(".pop_confirm").hide();
+		return false;
+	}
+		 
+		 $(".pop_message").show();
+		 $(".pop_message").click(function(){
+			 $(this).hide();
+		 });
+		
+		if(platform()=="Android"){
+			 var messageArray={
+				 "tel":15920021540,
+				 "content":"感谢您光临本店,希望我的服务让你满意！深圳市粤迪汽车贸易有限公司，销售顾问：刘一东，手机：13954889564",
+		      };
+			  
+			  if(messageArray.tel!="" || messageArray.content!=""){ 
+				  javascript:window.sendMessageInterface.sendMessage(messageArray.tel, messageArray.content);
+			  }
+		};
+		
+		 
+		
+		 
+		 if(bussinessStyle() && checkProgress() && checkResult()){
+			 
+			 //这里保存营业信息
+			 window.location.href="business_info.html";//注册成功后跳转至完善注册信息界面
+		     return false;
+		 }else{
+			 return false;
+		}
+	 }); 
+	   
+	   
+	  
+   })
+</script>
+
+</body>
+</html>
