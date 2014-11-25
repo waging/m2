@@ -377,7 +377,7 @@ $(function(){  //维修保险单JS
 </script>    
       <div class="form_box">
           <label>下次访问：</label> 
-        <div onclick="WdatePicker({isShowClear:false,maxDate:'2013-12-20'})" class="date_input">2013-12-20</div>
+        <div class="date_input" id="time">2013-12-20</div>
       </div>
 
        <div class="form_box">
@@ -412,7 +412,14 @@ $(function(){  //维修保险单JS
 </div><!--主体内容结束-->
 </form>
 
+<script>
+$(function(){
+	$("#time").click(function(){
+		WdatePicker({isShowClear:false,maxDate:'2013-12-20'});
+	})
+})
 
+</script>
 
 <div class="repair_bg"><!--填写维修单开始-->
     
