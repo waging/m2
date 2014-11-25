@@ -43,13 +43,24 @@
         
       
         
-      <div class="form_box">
+    <!--  <div class="form_box">
          <label>性别：</label>   
          <div class="wj_radio">
             <em><input type="radio" name="sex" checked ><strong>男</strong></em>
             <em><input type="radio" name="sex"><strong>女 </strong><font class="red">&nbsp;*</font></em>
          </div>
-      </div>
+      </div>-->
+      
+      
+      <div class="form_box">
+          <label>性别：</label>
+          <input type="hidden" name="Car[customer_sex]" value="">
+          <div id="car-customer_sex" class="wj_radio">
+             <label><input type="radio" name="Car[customer_sex]" value="1" checked>男</label>
+             <label><input type="radio" name="Car[customer_sex]" value="2"> 女</label>
+          </div>                   
+     </div>
+
         
         
         
@@ -130,7 +141,7 @@
 
 $(function(){
 	
-new PCAS("prov","city","area");
+new PCAS("prov","city","area","广东省","深圳市","罗湖区");
   $('#birthday').val('1988-03-15')
 	.scroller('destroy')
 	.scroller($.extend({preset :'date'},{  //日期

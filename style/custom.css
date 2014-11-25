@@ -312,5 +312,6 @@
 .auto_defind{ width:5em; margin-right:7px;}
 /*8.8*/
 
-
+.add_form .form_box .wj_radio label{ text-align:left;  float:left; width:4em;}
+.add_form .form_box .wj_radio label input{ float:left; margin-right:3px; margin-top:1px;}
 
