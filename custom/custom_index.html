@@ -65,6 +65,9 @@ $(".shadow").click(function(){
 $(".shadow,.common_style").bind("touchmove",function(e){
 	e.preventDefault();
 });	
+
+
+
 </script>
 <div id="container"><!--主体内容开始-->
  <div id="scroller">
@@ -76,7 +79,23 @@ $(".shadow,.common_style").bind("touchmove",function(e){
 		<input type="submit" value="" id="submit">
     </div>
 </div>
-  
+ 
+ <script type="text/javascript">
+$(function(){
+	$("#submit").click(function(){
+		var value=$("#search_keywords").val();
+		if(value==""){
+		  $(".search_tip").show(300);
+		  setTimeout(function(){
+			$(".search_tip").hide(300)
+		  },3000);
+		  return false;
+	    }else{ //处理搜索
+		  window.location.href=window.location.href+"keywords?="+value;
+		}
+	});//end click	  
+})
+</script>
   
   <div class="content_box">
   
