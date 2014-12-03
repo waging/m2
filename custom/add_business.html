@@ -146,7 +146,7 @@
       </div>
   
   
-     
+
     <div class="repair_infor weixiu_infor" style="display:none;"><!--维修单开始--> 
     
     
@@ -159,12 +159,11 @@
       
       <div class="pop_repair">
        <h3>填写维修单</h3>
-
-         
+ 
          
          <div class="form_box" style="margin-top:10px;">
             <label>预约：</label>
-            <div><input name="" type="text"></div>
+            <div><input name="" type="text"><span>*</span></div>
           </div>
           
           <div class="form_box state_time">
@@ -265,7 +264,7 @@
       
   
   
-  <div class="repair_infor baoxian_infor" style="display:none"><!--保险单开始-->
+  <div class="repair_infor baoxian_infor"><!--保险单开始-->
     
        <div class="form_box">
          <label>保险单：</label>  
@@ -279,7 +278,17 @@
        
           <div class="form_box">
             <label>保险公司：</label>
-           <div><input name="" type="text"><span>*</span></div>
+           <p class="select_bg area" style="width:305px;height:2.5em;line-height:2.5em; "> 
+             <select name="" class="business_style" style="height:2.5em; padding:0; line-height:2.5em;"">
+               <option>请选择保险公司</option>
+               <option>中国平安</opption>
+               <option>中国人寿</option>
+               <option>太平洋保险</option>
+               <option>泰康人寿</option>
+               <option>友邦保险</option>
+               <option>生命人寿</option>
+            </select>
+            </p>
          </div>
          
          <div class="form_box">
