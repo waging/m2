@@ -94,6 +94,9 @@
 .form_box div.xianzhong ul li{ float:left; width:175px; margin-bottom:5px;}
 .form_box div.xianzhong ul li input{ width:80px;}
 .baoxian_infor .pop_repair .form_box{ margin-top:10px;}
+
+.business_ul{ float:left;}
+.add_box .business_span{float:left; text-align:left; color:red; margin-left:-50px; padding-top:3px;}
 /*11.14*/
 
 

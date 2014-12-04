@@ -147,7 +147,7 @@
   
   
 
-    <div class="repair_infor weixiu_infor" style="display:none;"><!--维修单开始--> 
+    <div class="repair_infor weixiu_infor" ><!--维修单开始--> 
     
     
        <div class="form_box">
@@ -157,7 +157,7 @@
 
  
       
-      <div class="pop_repair">
+      <div class="pop_repair" style="display:block;">
        <h3>填写维修单</h3>
  
          
@@ -178,25 +178,28 @@
            <div><input name="" type="tel"></div>
          </div>
          
+     
         <div class="add_box">
            <span>维修类别：</span>
            <div>
-             <ul>
+             <ul class="business_ul">
                <li><input name="" type="checkbox" value="首保"><em>首保</em></li>
                <li><input name="" type="checkbox" value="定保"><em>定保</em></li>
-               <li><input name="" type="checkbox" value="维修"><em>维修</em></li>  
+               <li><input name="" type="checkbox" value="维修"><em>维修</em></li> 
              </ul>
+             <span class="business_span">*</span>
            </div>
         </div>
         
         <div class="add_box">
          <span>维修内容：</span>
          <div>
-           <ul>
+           <ul class="business_ul">
              <li><input name="" type="checkbox" value="机电"><em>机电</em></li>
              <li><input name="" type="checkbox" value="钣喷"><em>钣喷</em></li>
              <li><input name="" type="checkbox" value="精品"><em>精品</em></li>  
            </ul>
+           <span class="business_span">*</span>
          </div>
       </div>
       
