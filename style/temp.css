@@ -96,7 +96,7 @@
 .baoxian_infor .pop_repair .form_box{ margin-top:10px;}
 
 .business_ul{ float:left;}
-.add_box .business_span{float:left; text-align:left; color:red; margin-left:-50px; padding-top:3px;}
+.add_box .business_ul~span{float:left; text-align:left; color:red; margin-left:-50px; padding-top:3px;}
 /*11.14*/
 
 
